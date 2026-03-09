@@ -55,7 +55,7 @@ export function Hero() {
         <h1 className="animate-on-scroll opacity-0 delay-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
           {t('hero.title')}{' '}
           <span className="bg-gradient-to-r from-neutral-700 to-neutral-900 dark:from-neutral-300 dark:to-neutral-100 bg-clip-text text-transparent">
-            Yixuan Tao
+            {t('hero.name')}
           </span>
         </h1>
 
