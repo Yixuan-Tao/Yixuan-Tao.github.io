@@ -51,16 +51,16 @@
     }
   },
   "blog": {
-    "title": "Latest Articles",
-    "heading": "Thoughts & Insights",
+    "title": "Gameplay Analysis & System Design Insights",
+    "heading": "Analysis & Insights",
     "viewAll": "View All Posts",
     "posts": {
       "post1": {
-        "title": "Building Modern Web Applications with React",
-        "excerpt": "Explore the best practices for building scalable and maintainable React applications. From hooks to state management, this article covers what actually matters in production.",
-        "date": "Jan 15, 2024",
+        "title": "Storm Hero Experience System Breakdown",
+        "excerpt": "Analyze the team experience-sharing mechanism's impact on map rhythm, team dynamics, and player behavior.",
+        "date": "Mar 1, 2026",
         "readTime": "8 min read",
-        "category": "Development"
+        "category": "Breakdown"
       },
       "post2": {
         "title": "The Art of Minimalist Design",
@@ -100,27 +100,27 @@
     }
   },
   "projects": {
-    "title": "Featured Work",
-    "heading": "Projects I'm Proud Of",
-    "subtitle": "A collection of projects spanning analysis tools, interfaces, and full-stack prototypes.",
+    "title": "Some Projects for Tech & Design",
+    "heading": "Mod & Demo",
+    "subtitle": "Here are some projects I've done.",
     "code": "Code",
     "demo": "Live Demo",
     "items": {
       "project1": {
-        "name": "TaskMaster Pro",
-        "description": "A task management application built with React and Node.js, featuring real-time collaboration, drag-and-drop workflows, and flexible filtering."
+        "name": "Airstrike",
+        "description": "A 2D shooting game built with Godot, featuring basic game mechanics, player controls, and enemy AI."
       },
       "project2": {
-        "name": "DesignSystem UI",
-        "description": "A reusable UI component library with accessible building blocks, built with React, Tailwind CSS, and TypeScript."
+        "name": "Placeholder 1",
+        "description": "Placeholder 2"
       },
       "project3": {
-        "name": "DevBlog Platform",
-        "description": "A blogging platform tailored for developers, with Markdown authoring, syntax highlighting, and SEO-friendly architecture."
+        "name": "Placeholder 1",
+        "description": "Placeholder 2"
       },
       "project4": {
-        "name": "WeatherDash",
-        "description": "A weather dashboard with location-aware forecasts, interactive maps, and richer weather data visualizations."
+        "name": "Placeholder 1",
+        "description": "Placeholder 2"
       }
     }
   },

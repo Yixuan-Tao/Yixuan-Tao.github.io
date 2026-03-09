@@ -51,16 +51,16 @@
     }
   },
   "blog": {
-    "title": "最新文章",
-    "heading": "思考与洞察",
+    "title": "游戏机制与系统设计的分析记录",
+    "heading": "分析与洞察",
     "viewAll": "查看全部文章",
     "posts": {
       "post1": {
-        "title": "使用 React 构建现代 Web 应用",
-        "excerpt": "从 Hooks 到状态管理，梳理构建可扩展、可维护 React 应用时真正重要的实践经验。",
-        "date": "2024 年 1 月 15 日",
+        "title": "风暴英雄经验系统拆解",
+        "excerpt": "分析团队经验共享机制如何影响地图节奏、团战频率以及玩家行为。",
+        "date": "2026 年 3 月 1 日",
         "readTime": "8 分钟阅读",
-        "category": "开发"
+        "category": "拆解"
       },
       "post2": {
         "title": "极简设计的艺术",
@@ -100,27 +100,27 @@
     }
   },
   "projects": {
-    "title": "精选作品",
-    "heading": "我比较满意的项目",
-    "subtitle": "这里整理了一些我做过的项目，涵盖分析工具、界面设计和全栈原型。",
+    "title": "一些用于技术和设计",
+    "heading": "Mod & Demo",
+    "subtitle": "这里整理了一些我做过的项目。",
     "code": "源码",
     "demo": "在线演示",
     "items": {
       "project1": {
-        "name": "TaskMaster Pro",
-        "description": "一个基于 React 和 Node.js 的任务管理应用，支持实时协作、拖拽式流程和灵活筛选。"
+        "name": "Airstrike",
+        "description": "一个基于Godot引擎的2D射击游戏，包含基本的游戏机制、玩家控制和敌人。"
       },
       "project2": {
-        "name": "DesignSystem UI",
-        "description": "一个可复用的 UI 组件库，聚焦可访问性基础能力，基于 React、Tailwind CSS 和 TypeScript 构建。"
+        "name": "占位1",
+        "description": "占位2"
       },
       "project3": {
-        "name": "DevBlog Platform",
-        "description": "一个面向开发者的博客平台，支持 Markdown 写作、代码高亮和更友好的 SEO 架构。"
+        "name": "占位1",
+        "description": "占位2"
       },
       "project4": {
-        "name": "WeatherDash",
-        "description": "一个天气数据看板，提供基于位置的预报、交互式地图和更丰富的天气可视化。"
+        "name": "占位1",
+        "description": "占位2"
       }
     }
   },

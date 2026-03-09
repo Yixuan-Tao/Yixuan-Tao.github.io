@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ExternalLink, Github, Star } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -15,37 +15,33 @@ const projects = [
   {
     id: 1,
     key: 'projects.items.project1',
-    tags: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Socket.io'],
-    github: 'https://github.com',
+    tags: ['Godot'],
+    github: 'https://github.com/Yixuan-Tao/Airstrike',
     demo: 'https://demo.com',
-    stars: 234,
     image: 'bg-gradient-to-br from-cyan-500/20 to-blue-500/20',
   },
   {
     id: 2,
     key: 'projects.items.project2',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Storybook'],
+    tags: ['project2'],
     github: 'https://github.com',
     demo: 'https://demo.com',
-    stars: 567,
     image: 'bg-gradient-to-br from-purple-500/20 to-pink-500/20',
   },
   {
     id: 3,
     key: 'projects.items.project3',
-    tags: ['Next.js', 'MDX', 'Prisma', 'PostgreSQL'],
+    tags: ['project3'],
     github: 'https://github.com',
     demo: 'https://demo.com',
-    stars: 189,
     image: 'bg-gradient-to-br from-emerald-500/20 to-teal-500/20',
   },
   {
     id: 4,
     key: 'projects.items.project4',
-    tags: ['Vue.js', 'D3.js', 'OpenWeather API', 'PWA'],
+    tags: ['project4'],
     github: 'https://github.com',
     demo: 'https://demo.com',
-    stars: 145,
     image: 'bg-gradient-to-br from-amber-500/20 to-orange-500/20',
   },
 ];
@@ -116,17 +112,11 @@ export function Projects() {
                 </div>
 
                 <CardHeader className="pb-3">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <CardTitle className="text-xl mb-2">{content.name}</CardTitle>
-                      <CardDescription className="text-sm leading-relaxed">
-                        {content.description}
-                      </CardDescription>
-                    </div>
-                    <div className="flex items-center gap-1 text-amber-500 shrink-0">
-                      <Star className="w-4 h-4 fill-current" />
-                      <span className="text-sm font-medium">{project.stars}</span>
-                    </div>
+                  <div>
+                    <CardTitle className="text-xl mb-2">{content.name}</CardTitle>
+                    <CardDescription className="text-sm leading-relaxed">
+                      {content.description}
+                    </CardDescription>
                   </div>
                 </CardHeader>
 
