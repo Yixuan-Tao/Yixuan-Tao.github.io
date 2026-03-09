@@ -3,15 +3,26 @@ import { Code, PenTool, Coffee, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const skills = [
-  { name: 'System Design', icon: Code, level: 85 },
-  { name: 'Gameplay Analysis', icon: PenTool, level: 80 },
-  { name: 'Python & Data Tools', icon: Coffee, level: 90 },
-  { name: 'Technical Implementation', icon: Globe, level: 70 },
+  { name: 'about.skills.systemDesign', icon: Code, level: 85 },
+  { name: 'about.skills.gameplayAnalysis', icon: PenTool, level: 80 },
+  { name: 'about.skills.pythonDataTools', icon: Coffee, level: 90 },
+  { name: 'about.skills.technicalImplementation', icon: Globe, level: 70 },
 ];
+
+type StatItem = {
+  value: string;
+  label: string;
+};
 
 export function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
+  const stats = [
+    t('about.stats.caseStudies', { returnObjects: true }),
+    t('about.stats.demo', { returnObjects: true }),
+    t('about.stats.graduation', { returnObjects: true }),
+    t('about.stats.skillsDevelopment', { returnObjects: true }),
+  ] as StatItem[];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,7 +51,6 @@ export function About() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left column - Text content */}
           <div>
             <p className="animate-on-scroll opacity-0 text-sm text-muted-foreground tracking-widest uppercase mb-4">
               {t('about.title')}
@@ -49,19 +59,12 @@ export function About() {
               {t('about.heading')}
             </h2>
             <div className="animate-on-scroll opacity-0 delay-200 space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                {t('about.content1')}
-              </p>
-              <p>
-                {t('about.content2')}
-              </p>
-              <p>
-                {t('about.content3')}
-              </p>
+              <p>{t('about.content1')}</p>
+              <p>{t('about.content2')}</p>
+              <p>{t('about.content3')}</p>
             </div>
           </div>
 
-          {/* Right column - Skills */}
           <div className="space-y-6">
             {skills.map((skill, index) => (
               <div
@@ -72,7 +75,7 @@ export function About() {
                   <div className="p-3 rounded-xl bg-secondary">
                     <skill.icon className="w-5 h-5" />
                   </div>
-                  <span className="font-medium">{skill.name}</span>
+                  <span className="font-medium">{t(skill.name)}</span>
                   <span className="ml-auto text-sm text-muted-foreground">
                     {skill.level}%
                   </span>
@@ -88,14 +91,8 @@ export function About() {
           </div>
         </div>
 
-        {/* Stats */}
         <div className="animate-on-scroll opacity-0 delay-500 mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { value: '3+', label: 'Case Studies' },
-            { value: '2+', label: 'Demo' },
-            { value: '2027.12', label: 'Graduation' },
-            { value: 'Ongoing', label: 'Skills Development' },
-          ].map((stat) => (
+          {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl sm:text-4xl font-bold mb-2">{stat.value}</div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>

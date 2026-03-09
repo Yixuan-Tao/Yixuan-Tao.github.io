@@ -1,36 +1,135 @@
 {
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "languageSwitcher": {
+    "toggle": "Switch language",
+    "zh": "中文",
+    "en": "English"
+  },
   "hero": {
     "greeting": "Welcome to my blog",
     "title": "Hi, I'm",
-    "subtitle": "A passionate developer, writer, and creative thinker. I share my thoughts on technology, design, and life.",
+    "subtitle": "I focus on game systems analysis, design thinking, and technical experimentation, and I write about the logic behind how games and products work.",
     "cta1": "Read My Blog",
     "cta2": "About Me"
   },
   "about": {
     "title": "About Me",
-    "heading": "Crafting digital experiences with passion",
-    "content1": "Hello! I'm a full-stack developer and designer based in Nanjing, Jiangsu, China. With over 5 years of experience in the tech industry, I've had the privilege of working with startups and established companies alike.",
-    "content2": "My journey began with a curiosity about how things work on the web, which led me to dive deep into programming. Today, I specialize in building modern web applications that are both beautiful and functional.",
-    "content3": "When I'm not coding, you'll find me writing about technology, contributing to open-source projects, or exploring new design trends.",
+    "heading": "Understanding systems, building better experiences",
+    "content1": "I focus on analyzing how game systems shape player behavior, pacing, and long-term engagement. Through case studies, system breakdowns, and technical projects, I explore the intersection of game design logic and practical implementation.",
+    "content2": "My work spans gameplay analysis, system design thinking, and hands-on development. I care about how ideas are translated into rules, interfaces, and user-facing experiences that people can actually feel.",
+    "content3": "This website is a collection of my work in game systems, design thinking, and technical experimentation. It is where I organize ongoing research, notes, and selected projects.",
     "skills": {
-      "frontend": "Frontend Development",
-      "uiux": "UI/UX Design",
-      "writing": "Technical Writing",
-      "opensource": "Open Source"
+      "systemDesign": "System Design",
+      "gameplayAnalysis": "Gameplay Analysis",
+      "pythonDataTools": "Python & Data Tools",
+      "technicalImplementation": "Technical Implementation"
     },
     "stats": {
-      "articles": "Articles Published",
-      "experience": "Years Experience",
-      "projects": "Projects Completed",
-      "stars": "GitHub Stars"
+      "caseStudies": {
+        "value": "3+",
+        "label": "Case Studies"
+      },
+      "demo": {
+        "value": "2+",
+        "label": "Demo Projects"
+      },
+      "graduation": {
+        "value": "2027.12",
+        "label": "Expected Graduation"
+      },
+      "skillsDevelopment": {
+        "value": "Ongoing",
+        "label": "Skills Development"
+      }
+    }
+  },
+  "blog": {
+    "title": "Latest Articles",
+    "heading": "Thoughts & Insights",
+    "viewAll": "View All Posts",
+    "posts": {
+      "post1": {
+        "title": "Building Modern Web Applications with React",
+        "excerpt": "Explore the best practices for building scalable and maintainable React applications. From hooks to state management, this article covers what actually matters in production.",
+        "date": "Jan 15, 2024",
+        "readTime": "8 min read",
+        "category": "Development"
+      },
+      "post2": {
+        "title": "The Art of Minimalist Design",
+        "excerpt": "How less can be more in digital design. This piece breaks down the principles behind clean, effective, and memorable user interfaces.",
+        "date": "Jan 10, 2024",
+        "readTime": "6 min read",
+        "category": "Design"
+      },
+      "post3": {
+        "title": "My Journey into Open Source",
+        "excerpt": "A reflection on contributing to open-source projects and how that experience reshaped my growth as a developer.",
+        "date": "Jan 5, 2024",
+        "readTime": "5 min read",
+        "category": "Career"
+      },
+      "post4": {
+        "title": "TypeScript Tips and Tricks",
+        "excerpt": "Advanced TypeScript patterns and practical techniques that make codebases easier to maintain and safer to evolve.",
+        "date": "Dec 28, 2023",
+        "readTime": "10 min read",
+        "category": "Development"
+      },
+      "post5": {
+        "title": "The Future of Web Development",
+        "excerpt": "A look at the technologies and workflow shifts that are likely to shape how we build for the web in the coming years.",
+        "date": "Dec 20, 2023",
+        "readTime": "7 min read",
+        "category": "Technology"
+      },
+      "post6": {
+        "title": "Mastering CSS Grid and Flexbox",
+        "excerpt": "A practical guide to modern CSS layout techniques, with examples that help choose the right layout tool for each job.",
+        "date": "Dec 15, 2023",
+        "readTime": "12 min read",
+        "category": "Development"
+      }
+    }
+  },
+  "projects": {
+    "title": "Featured Work",
+    "heading": "Projects I'm Proud Of",
+    "subtitle": "A collection of projects spanning analysis tools, interfaces, and full-stack prototypes.",
+    "code": "Code",
+    "demo": "Live Demo",
+    "items": {
+      "project1": {
+        "name": "TaskMaster Pro",
+        "description": "A task management application built with React and Node.js, featuring real-time collaboration, drag-and-drop workflows, and flexible filtering."
+      },
+      "project2": {
+        "name": "DesignSystem UI",
+        "description": "A reusable UI component library with accessible building blocks, built with React, Tailwind CSS, and TypeScript."
+      },
+      "project3": {
+        "name": "DevBlog Platform",
+        "description": "A blogging platform tailored for developers, with Markdown authoring, syntax highlighting, and SEO-friendly architecture."
+      },
+      "project4": {
+        "name": "WeatherDash",
+        "description": "A weather dashboard with location-aware forecasts, interactive maps, and richer weather data visualizations."
+      }
     }
   },
   "contact": {
     "title": "Get In Touch",
     "heading": "Let's Work Together",
-    "subtitle": "Have a project in mind or just want to chat? I'd love to hear from you. Send me a message and I'll respond as soon as possible.",
+    "subtitle": "Have a project in mind or just want to chat? Send me a message and I'll get back to you as soon as possible.",
     "info": {
       "location": "Location",
+      "locationValue": "Nanjing, Jiangsu, China",
       "email": "Email",
       "phone": "Phone"
     },
@@ -39,15 +138,20 @@
       "email": "Email",
       "subject": "Subject",
       "message": "Message",
+      "namePlaceholder": "John Doe",
+      "emailPlaceholder": "john@example.com",
+      "subjectPlaceholder": "Project Inquiry",
+      "messagePlaceholder": "Tell me about your project...",
       "submit": "Send Message",
       "submitting": "Sending...",
-      "success": "Message sent!",
+      "success": "Message sent",
       "successDesc": "Thank you for reaching out. I'll get back to you soon."
     },
     "quote": "The best way to predict the future is to create it.",
-    "quoteAuthor": "— Peter Drucker"
+    "quoteAuthor": "Peter Drucker"
   },
   "footer": {
+    "description": "Researching systems and building practical digital work.",
     "nav": {
       "home": "Home",
       "about": "About",

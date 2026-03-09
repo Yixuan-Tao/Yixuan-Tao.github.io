@@ -1,36 +1,135 @@
 {
+  "navigation": {
+    "home": "首页",
+    "about": "关于",
+    "blog": "博客",
+    "projects": "项目",
+    "contact": "联系"
+  },
+  "languageSwitcher": {
+    "toggle": "切换语言",
+    "zh": "中文",
+    "en": "English"
+  },
   "hero": {
     "greeting": "欢迎来到我的博客",
     "title": "你好，我是",
-    "subtitle": "一个充满激情的开发者、作家和创意思考者。我分享关于技术、设计和生活的思考。",
-    "cta1": "阅读我的博客",
+    "subtitle": "我专注于游戏系统分析、设计思维和技术实验，也记录自己对游戏与产品运行逻辑的观察与思考。",
+    "cta1": "阅读博客",
     "cta2": "关于我"
   },
   "about": {
     "title": "关于我",
-    "heading": "用激情创造数字体验",
-    "content1": "你好！我是一名全栈开发者和设计师，现居中国江苏省南京市。拥有超过5年的科技行业经验，我有幸与初创公司和知名企业合作。",
-    "content2": "我的旅程始于对网络工作原理的好奇心，这引导我深入学习编程。今天，我专注于构建既美观又实用的现代网络应用。",
-    "content3": "当我不编码时，你会发现我在撰写技术文章、为开源项目做贡献，或探索新的设计趋势。",
+    "heading": "理解系统，构建更好的体验",
+    "content1": "我关注游戏系统如何影响玩家行为、节奏控制以及长期参与度。通过案例研究、系统拆解和技术项目，我持续探索游戏设计逻辑与实际实现之间的连接点。",
+    "content2": "我的工作覆盖玩法分析、系统设计思考以及动手开发。我在意的是一个想法如何被转化为规则、界面和用户真正能感受到的体验。",
+    "content3": "这个网站整理了我在游戏系统、设计思维与技术实验方面的内容，也作为我持续记录研究、笔记和项目的地方。",
     "skills": {
-      "frontend": "前端开发",
-      "uiux": "UI/UX设计",
-      "writing": "技术写作",
-      "opensource": "开源"
+      "systemDesign": "系统设计",
+      "gameplayAnalysis": "玩法分析",
+      "pythonDataTools": "Python 与数据工具",
+      "technicalImplementation": "技术实现"
     },
     "stats": {
-      "articles": "发表文章",
-      "experience": "工作经验",
-      "projects": "完成项目",
-      "stars": "GitHub星标"
+      "caseStudies": {
+        "value": "3+",
+        "label": "案例研究"
+      },
+      "demo": {
+        "value": "2+",
+        "label": "演示项目"
+      },
+      "graduation": {
+        "value": "2027.12",
+        "label": "预计毕业"
+      },
+      "skillsDevelopment": {
+        "value": "持续中",
+        "label": "技能成长"
+      }
+    }
+  },
+  "blog": {
+    "title": "最新文章",
+    "heading": "思考与洞察",
+    "viewAll": "查看全部文章",
+    "posts": {
+      "post1": {
+        "title": "使用 React 构建现代 Web 应用",
+        "excerpt": "从 Hooks 到状态管理，梳理构建可扩展、可维护 React 应用时真正重要的实践经验。",
+        "date": "2024 年 1 月 15 日",
+        "readTime": "8 分钟阅读",
+        "category": "开发"
+      },
+      "post2": {
+        "title": "极简设计的艺术",
+        "excerpt": "为什么少即是多。本文拆解干净、有效且有记忆点的数字界面背后的设计原则。",
+        "date": "2024 年 1 月 10 日",
+        "readTime": "6 分钟阅读",
+        "category": "设计"
+      },
+      "post3": {
+        "title": "我的开源之路",
+        "excerpt": "回顾参与开源项目的经历，以及这段经历如何改变我作为开发者的成长路径。",
+        "date": "2024 年 1 月 5 日",
+        "readTime": "5 分钟阅读",
+        "category": "成长"
+      },
+      "post4": {
+        "title": "TypeScript 技巧整理",
+        "excerpt": "一些高级 TypeScript 模式和实用技巧，帮助代码库更稳定，也更容易长期维护。",
+        "date": "2023 年 12 月 28 日",
+        "readTime": "10 分钟阅读",
+        "category": "开发"
+      },
+      "post5": {
+        "title": "Web 开发的未来",
+        "excerpt": "从技术演进到工作流变化，看看未来几年会如何影响我们构建 Web 产品的方式。",
+        "date": "2023 年 12 月 20 日",
+        "readTime": "7 分钟阅读",
+        "category": "技术"
+      },
+      "post6": {
+        "title": "掌握 CSS Grid 与 Flexbox",
+        "excerpt": "用实际案例梳理现代 CSS 布局方式，帮助你在不同场景下选对工具、写对结构。",
+        "date": "2023 年 12 月 15 日",
+        "readTime": "12 分钟阅读",
+        "category": "开发"
+      }
+    }
+  },
+  "projects": {
+    "title": "精选作品",
+    "heading": "我比较满意的项目",
+    "subtitle": "这里整理了一些我做过的项目，涵盖分析工具、界面设计和全栈原型。",
+    "code": "源码",
+    "demo": "在线演示",
+    "items": {
+      "project1": {
+        "name": "TaskMaster Pro",
+        "description": "一个基于 React 和 Node.js 的任务管理应用，支持实时协作、拖拽式流程和灵活筛选。"
+      },
+      "project2": {
+        "name": "DesignSystem UI",
+        "description": "一个可复用的 UI 组件库，聚焦可访问性基础能力，基于 React、Tailwind CSS 和 TypeScript 构建。"
+      },
+      "project3": {
+        "name": "DevBlog Platform",
+        "description": "一个面向开发者的博客平台，支持 Markdown 写作、代码高亮和更友好的 SEO 架构。"
+      },
+      "project4": {
+        "name": "WeatherDash",
+        "description": "一个天气数据看板，提供基于位置的预报、交互式地图和更丰富的天气可视化。"
+      }
     }
   },
   "contact": {
     "title": "联系我",
-    "heading": "让我们一起合作",
-    "subtitle": "有项目想法或只是想聊天？我很乐意听到你的消息。给我发消息，我会尽快回复。",
+    "heading": "一起做点东西",
+    "subtitle": "如果你有项目想法，或者只是想交流一下，都可以给我发消息，我会尽快回复。",
     "info": {
-      "location": "位置",
+      "location": "所在地",
+      "locationValue": "中国江苏南京",
       "email": "邮箱",
       "phone": "电话"
     },
@@ -38,16 +137,21 @@
       "name": "姓名",
       "email": "邮箱",
       "subject": "主题",
-      "message": "消息",
+      "message": "内容",
+      "namePlaceholder": "张三",
+      "emailPlaceholder": "name@example.com",
+      "subjectPlaceholder": "项目咨询",
+      "messagePlaceholder": "可以简单介绍一下你的项目或想法……",
       "submit": "发送消息",
       "submitting": "发送中...",
-      "success": "消息已发送！",
-      "successDesc": "感谢您的联系。我会尽快回复您。"
+      "success": "消息已发送",
+      "successDesc": "感谢你的联系，我会尽快回复。"
     },
-    "quote": "预测未来的最好方法是创造未来。",
-    "quoteAuthor": "— 彼得·德鲁克"
+    "quote": "预测未来的最好方式，就是亲手创造它。",
+    "quoteAuthor": "彼得·德鲁克"
   },
   "footer": {
+    "description": "持续研究系统，也持续做一些有用的数字作品。",
     "nav": {
       "home": "首页",
       "about": "关于",
@@ -61,7 +165,7 @@
       "linkedin": "LinkedIn",
       "email": "邮箱"
     },
-    "copyright": "© {{year}} 陶一轩。保留所有权利。",
-    "madeWith": "使用 React 用心制作"
+    "copyright": "© {{year}} Yixuan Tao。保留所有权利。",
+    "madeWith": "使用 React 与 {{heart}} 构建"
   }
 }

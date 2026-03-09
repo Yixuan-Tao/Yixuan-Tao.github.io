@@ -11,7 +11,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'contact.info.location',
-    value: 'Nanjing, Jiangsu, China',
+    value: 'contact.info.locationValue',
   },
   {
     icon: Mail,
@@ -56,7 +56,6 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
@@ -75,7 +74,6 @@ export function Contact() {
       className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-secondary/30"
     >
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <p className="animate-on-scroll opacity-0 text-sm text-muted-foreground tracking-widest uppercase mb-4">
             {t('contact.title')}
@@ -89,35 +87,37 @@ export function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-5 gap-12">
-          {/* Contact Info */}
           <div className="lg:col-span-2 space-y-8">
-            {contactInfo.map((item, index) => (
-              <div
-                key={item.label}
-                className={`animate-on-scroll opacity-0 delay-${(index + 3) * 100} flex items-start gap-4`}
-              >
-                <div className="p-3 rounded-xl bg-white dark:bg-neutral-800 shadow-md">
-                  <item.icon className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">
-                    {t(item.label)}
-                  </p>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      className="font-medium hover:text-primary transition-colors"
-                    >
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="font-medium">{item.value}</p>
-                  )}
-                </div>
-              </div>
-            ))}
+            {contactInfo.map((item, index) => {
+              const value = item.href ? item.value : t(item.value);
 
-            {/* Decorative element */}
+              return (
+                <div
+                  key={item.label}
+                  className={`animate-on-scroll opacity-0 delay-${(index + 3) * 100} flex items-start gap-4`}
+                >
+                  <div className="p-3 rounded-xl bg-white dark:bg-neutral-800 shadow-md">
+                    <item.icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      {t(item.label)}
+                    </p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="font-medium hover:text-primary transition-colors"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="font-medium">{value}</p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+
             <div className="animate-on-scroll opacity-0 delay-500 hidden lg:block mt-12 p-8 rounded-3xl bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-700">
               <blockquote className="text-lg font-medium italic">
                 "{t('contact.quote')}"
@@ -128,7 +128,6 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="lg:col-span-3">
             <form
               onSubmit={handleSubmit}
@@ -139,7 +138,7 @@ export function Contact() {
                   <Label htmlFor="name">{t('contact.form.name')}</Label>
                   <Input
                     id="name"
-                    placeholder="John Doe"
+                    placeholder={t('contact.form.namePlaceholder')}
                     required
                     className="rounded-xl"
                   />
@@ -149,7 +148,7 @@ export function Contact() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                     required
                     className="rounded-xl"
                   />
@@ -160,7 +159,7 @@ export function Contact() {
                 <Label htmlFor="subject">{t('contact.form.subject')}</Label>
                 <Input
                   id="subject"
-                  placeholder="Project Inquiry"
+                  placeholder={t('contact.form.subjectPlaceholder')}
                   required
                   className="rounded-xl"
                 />
@@ -170,7 +169,7 @@ export function Contact() {
                 <Label htmlFor="message">{t('contact.form.message')}</Label>
                 <Textarea
                   id="message"
-                  placeholder="Tell me about your project..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                   required
                   rows={5}
                   className="rounded-xl resize-none"

@@ -6,22 +6,20 @@ import zhTranslation from './locales/zh.json';
 
 const resources = {
   en: {
-    translation: enTranslation
+    translation: enTranslation,
   },
   zh: {
-    translation: zhTranslation
-  }
+    translation: zhTranslation,
+  },
 };
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: 'en', // 默认语言
-    fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false // React 已经处理了 XSS
-    }
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: 'zh',
+  fallbackLng: 'zh',
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 export default i18n;
