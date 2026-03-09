@@ -1,24 +1,25 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 
 export function LanguageSwitcher() {
-  const { i18n, t } = useTranslation();
-  const isEnglish = i18n.resolvedLanguage === 'en';
+  const { i18n } = useTranslation();
+  const [isEnglish, setIsEnglish] = useState(i18n.language === 'en');
 
   const toggleLanguage = () => {
     const newLanguage = isEnglish ? 'zh' : 'en';
-    void i18n.changeLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage);
+    setIsEnglish(!isEnglish);
   };
 
   return (
-    <Button
-      variant="outline"
-      size="sm"
+    <Button 
+      variant="outline" 
+      size="sm" 
       onClick={toggleLanguage}
       className="ml-auto"
-      aria-label={t('languageSwitcher.toggle')}
     >
-      {isEnglish ? t('languageSwitcher.zh') : t('languageSwitcher.en')}
+      {isEnglish ? '中文' : 'English'}
     </Button>
   );
 }
