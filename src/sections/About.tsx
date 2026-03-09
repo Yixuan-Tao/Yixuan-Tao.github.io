@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 import { Code, PenTool, Coffee, Globe } from 'lucide-react';
 
 const skills = [
-  { name: 'Frontend Development', icon: Code, level: 90 },
-  { name: 'UI/UX Design', icon: PenTool, level: 85 },
-  { name: 'Technical Writing', icon: Coffee, level: 80 },
-  { name: 'Open Source', icon: Globe, level: 75 },
+  { name: 'System Design', icon: Code, level: 85 },
+  { name: 'Gameplay Analysis', icon: PenTool, level: 80 },
+  { name: 'Python & Data Tools', icon: Coffee, level: 90 },
+  { name: 'Technical Implementation', icon: Globe, level: 70 },
 ];
 
 export function About() {
@@ -44,13 +44,11 @@ export function About() {
               About Me
             </p>
             <h2 className="animate-on-scroll opacity-0 delay-100 text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Crafting digital experiences with passion
+              Exploring game systems through design and technical thinking
             </h2>
             <div className="animate-on-scroll opacity-0 delay-200 space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Hello! I'm a full-stack developer and designer based in Nanjing, Jiangsu, China. 
-                With over 5 years of experience in the tech industry, I've had the 
-                privilege of working with startups and established companies alike.
+                I am an IT Master's student at the University of Adelaide, with a strong interest in game systems design, gameplay analysis, and technical problem-solving. My work focuses on understanding how progression systems, in-game economies, and player incentives interact, while also building technical projects that reflect structured thinking and analytical execution. This portfolio brings together my game system breakdowns, design explorations, and software projects as I continue developing toward roles in the game and technology industries.
               </p>
               <p>
                 My journey began with a curiosity about how things work on the web, 
@@ -94,10 +92,10 @@ export function About() {
         {/* Stats */}
         <div className="animate-on-scroll opacity-0 delay-500 mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { value: '50+', label: 'Articles Published' },
-            { value: '5+', label: 'Years Experience' },
-            { value: '20+', label: 'Projects Completed' },
-            { value: '1K+', label: 'GitHub Stars' },
+            { value: '3+', label: 'Case Studies' },
+            { value: '2+', label: 'Demo' },
+            { value: '2027.12', label: 'Graduation' },
+            { value: 'Ongoing', label: 'Skills Development' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl sm:text-4xl font-bold mb-2">{stat.value}</div>
