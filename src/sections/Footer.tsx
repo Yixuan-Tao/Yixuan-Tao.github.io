@@ -24,13 +24,15 @@ export function Footer() {
     <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Logo/Brand */}
           <div className="text-center md:text-left">
             <h3 className="text-xl font-bold mb-2">Yixuan Tao</h3>
             <p className="text-sm text-muted-foreground">
-              {t('footer.description')}
+              Building digital experiences with passion.
             </p>
           </div>
 
+          {/* Navigation */}
           <nav className="flex flex-wrap justify-center gap-6">
             {navLinks.map((link) => (
               <a
@@ -43,6 +45,7 @@ export function Footer() {
             ))}
           </nav>
 
+          {/* Social Links */}
           <div className="flex gap-4">
             {socialLinks.map((link) => (
               <a
@@ -59,8 +62,10 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Divider */}
         <div className="my-8 border-t" />
 
+        {/* Copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm text-muted-foreground">
           <span>{t('footer.copyright', { year: currentYear })}</span>
           <span className="hidden sm:inline">·</span>
