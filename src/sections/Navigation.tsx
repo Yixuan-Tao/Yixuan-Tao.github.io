@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 const navItems = [
-  { label: 'Home', href: '#' },
-  { label: 'About', href: '#about' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'navigation.home', href: '#' },
+  { label: 'navigation.about', href: '#about' },
+  { label: 'navigation.blog', href: '#blog' },
+  { label: 'navigation.projects', href: '#projects' },
+  { label: 'navigation.contact', href: '#contact' },
 ];
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +59,6 @@ export function Navigation() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <a
               href="#"
               onClick={(e) => handleNavClick(e, '#')}
@@ -66,7 +67,6 @@ export function Navigation() {
               YN
             </a>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">
               <nav className="flex items-center gap-1">
                 {navItems.map((item) => (
@@ -76,14 +76,13 @@ export function Navigation() {
                     onClick={(e) => handleNavClick(e, item.href)}
                     className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-secondary"
                   >
-                    {item.label}
+                    {t(item.label)}
                   </a>
                 ))}
               </nav>
               <LanguageSwitcher />
             </div>
 
-            {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="icon"
@@ -100,7 +99,6 @@ export function Navigation() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
       <div
         className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
           isMobileMenuOpen
@@ -128,7 +126,7 @@ export function Navigation() {
                   onClick={(e) => handleNavClick(e, item.href)}
                   className="px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors rounded-xl hover:bg-secondary"
                 >
-                  {item.label}
+                  {t(item.label)}
                 </a>
               ))}
             </nav>
