@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "greeting": "Welcome to my blog",
+    "title": "Hi, I'm",
+    "subtitle": "A passionate developer, writer, and creative thinker. I share my thoughts on technology, design, and life.",
+    "cta1": "Read My Blog",
+    "cta2": "About Me"
+  },
+  "about": {
+    "title": "About Me",
+    "heading": "Crafting digital experiences with passion",
+    "content1": "Hello! I'm a full-stack developer and designer based in Nanjing, Jiangsu, China. With over 5 years of experience in the tech industry, I've had the privilege of working with startups and established companies alike.",
+    "content2": "My journey began with a curiosity about how things work on the web, which led me to dive deep into programming. Today, I specialize in building modern web applications that are both beautiful and functional.",
+    "content3": "When I'm not coding, you'll find me writing about technology, contributing to open-source projects, or exploring new design trends.",
+    "skills": {
+      "frontend": "Frontend Development",
+      "uiux": "UI/UX Design",
+      "writing": "Technical Writing",
+      "opensource": "Open Source"
+    },
+    "stats": {
+      "articles": "Articles Published",
+      "experience": "Years Experience",
+      "projects": "Projects Completed",
+      "stars": "GitHub Stars"
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "heading": "Let's Work Together",
+    "subtitle": "Have a project in mind or just want to chat? I'd love to hear from you. Send me a message and I'll respond as soon as possible.",
+    "info": {
+      "location": "Location",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Message sent!",
+      "successDesc": "Thank you for reaching out. I'll get back to you soon."
+    },
+    "quote": "The best way to predict the future is to create it.",
+    "quoteAuthor": "— Peter Drucker"
+  },
+  "footer": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "blog": "Blog",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "social": {
+      "github": "GitHub",
+      "wechat": "WeChat",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "copyright": "© {{year}} Yixuan Tao. All rights reserved.",
+    "madeWith": "Made with {{heart}} using React"
+  }
+}

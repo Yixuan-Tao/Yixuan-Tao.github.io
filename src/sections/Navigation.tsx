@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 const navItems = [
   { label: 'Home', href: '#' },
@@ -66,18 +67,21 @@ export function Navigation() {
             </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-secondary"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
+            <div className="hidden md:flex items-center gap-1">
+              <nav className="flex items-center gap-1">
+                {navItems.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-secondary"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+              <LanguageSwitcher />
+            </div>
 
             {/* Mobile Menu Button */}
             <Button
@@ -115,18 +119,23 @@ export function Navigation() {
               : '-translate-y-4 opacity-0'
           }`}
         >
-          <nav className="flex flex-col gap-2">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors rounded-xl hover:bg-secondary"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
+          <div className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-2">
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="px-4 py-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors rounded-xl hover:bg-secondary"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+            <div className="mt-4">
+              <LanguageSwitcher />
+            </div>
+          </div>
         </div>
       </div>
     </>

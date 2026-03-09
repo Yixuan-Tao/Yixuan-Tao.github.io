@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Code, PenTool, Coffee, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const skills = [
   { name: 'System Design', icon: Code, level: 85 },
@@ -10,6 +11,7 @@ const skills = [
 
 export function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,23 +43,20 @@ export function About() {
           {/* Left column - Text content */}
           <div>
             <p className="animate-on-scroll opacity-0 text-sm text-muted-foreground tracking-widest uppercase mb-4">
-              About Me
+              {t('about.title')}
             </p>
             <h2 className="animate-on-scroll opacity-0 delay-100 text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Exploring game systems through design and technical thinking
+              {t('about.heading')}
             </h2>
             <div className="animate-on-scroll opacity-0 delay-200 space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I am an IT Master's student at the University of Adelaide, with a strong interest in game systems design, gameplay analysis, and technical problem-solving. My work focuses on understanding how progression systems, in-game economies, and player incentives interact, while also building technical projects that reflect structured thinking and analytical execution. This portfolio brings together my game system breakdowns, design explorations, and software projects as I continue developing toward roles in the game and technology industries.
+                {t('about.content1')}
               </p>
               <p>
-                My journey began with a curiosity about how things work on the web, 
-                which led me to dive deep into programming. Today, I specialize in 
-                building modern web applications that are both beautiful and functional.
+                {t('about.content2')}
               </p>
               <p>
-                When I'm not coding, you'll find me writing about technology, 
-                contributing to open-source projects, or exploring new design trends.
+                {t('about.content3')}
               </p>
             </div>
           </div>

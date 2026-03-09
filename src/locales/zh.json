@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "greeting": "欢迎来到我的博客",
+    "title": "你好，我是",
+    "subtitle": "一个充满激情的开发者、作家和创意思考者。我分享关于技术、设计和生活的思考。",
+    "cta1": "阅读我的博客",
+    "cta2": "关于我"
+  },
+  "about": {
+    "title": "关于我",
+    "heading": "用激情创造数字体验",
+    "content1": "你好！我是一名全栈开发者和设计师，现居中国江苏省南京市。拥有超过5年的科技行业经验，我有幸与初创公司和知名企业合作。",
+    "content2": "我的旅程始于对网络工作原理的好奇心，这引导我深入学习编程。今天，我专注于构建既美观又实用的现代网络应用。",
+    "content3": "当我不编码时，你会发现我在撰写技术文章、为开源项目做贡献，或探索新的设计趋势。",
+    "skills": {
+      "frontend": "前端开发",
+      "uiux": "UI/UX设计",
+      "writing": "技术写作",
+      "opensource": "开源"
+    },
+    "stats": {
+      "articles": "发表文章",
+      "experience": "工作经验",
+      "projects": "完成项目",
+      "stars": "GitHub星标"
+    }
+  },
+  "contact": {
+    "title": "联系我",
+    "heading": "让我们一起合作",
+    "subtitle": "有项目想法或只是想聊天？我很乐意听到你的消息。给我发消息，我会尽快回复。",
+    "info": {
+      "location": "位置",
+      "email": "邮箱",
+      "phone": "电话"
+    },
+    "form": {
+      "name": "姓名",
+      "email": "邮箱",
+      "subject": "主题",
+      "message": "消息",
+      "submit": "发送消息",
+      "submitting": "发送中...",
+      "success": "消息已发送！",
+      "successDesc": "感谢您的联系。我会尽快回复您。"
+    },
+    "quote": "预测未来的最好方法是创造未来。",
+    "quoteAuthor": "— 彼得·德鲁克"
+  },
+  "footer": {
+    "nav": {
+      "home": "首页",
+      "about": "关于",
+      "blog": "博客",
+      "projects": "项目",
+      "contact": "联系"
+    },
+    "social": {
+      "github": "GitHub",
+      "wechat": "微信",
+      "linkedin": "LinkedIn",
+      "email": "邮箱"
+    },
+    "copyright": "© {{year}} 陶一轩。保留所有权利。",
+    "madeWith": "使用 React 用心制作"
+  }
+}

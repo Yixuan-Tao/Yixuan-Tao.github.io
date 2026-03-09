@@ -1,22 +1,24 @@
 import { Github, Linkedin, Mail, Heart, MessageSquare } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/Yixuan-Tao', label: 'GitHub' },
-  { icon: MessageSquare, href: '#', label: 'WeChat' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/yixuan-tao-y78tao', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:taoyixuan0415@outlook.com', label: 'Email' },
+  { icon: Github, href: 'https://github.com/Yixuan-Tao', label: 'footer.social.github' },
+  { icon: MessageSquare, href: '#', label: 'footer.social.wechat' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/yixuan-tao-y78tao', label: 'footer.social.linkedin' },
+  { icon: Mail, href: 'mailto:taoyixuan0415@outlook.com', label: 'footer.social.email' },
 ];
 
 const navLinks = [
-  { label: 'Home', href: '#' },
-  { label: 'About', href: '#about' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'footer.nav.home', href: '#' },
+  { label: 'footer.nav.about', href: '#about' },
+  { label: 'footer.nav.blog', href: '#blog' },
+  { label: 'footer.nav.projects', href: '#projects' },
+  { label: 'footer.nav.contact', href: '#contact' },
 ];
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t">
@@ -38,7 +40,7 @@ export function Footer() {
                 href={link.href}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                {link.label}
+                {t(link.label)}
               </a>
             ))}
           </nav>
@@ -52,7 +54,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
-                aria-label={link.label}
+                aria-label={t(link.label)}
               >
                 <link.icon className="w-4 h-4" />
               </a>
@@ -65,10 +67,10 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm text-muted-foreground">
-          <span>© {currentYear} Yixuan Tao. All rights reserved.</span>
+          <span>{t('footer.copyright', { year: currentYear })}</span>
           <span className="hidden sm:inline">·</span>
           <span className="flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> using React
+            {t('footer.madeWith', { heart: <Heart className="w-4 h-4 text-red-500 fill-current" /> })}
           </span>
         </div>
       </div>

@@ -5,22 +5,23 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslation } from 'react-i18next';
 
 const contactInfo = [
   {
     icon: MapPin,
-    label: 'Location',
+    label: 'contact.info.location',
     value: 'Nanjing, Jiangsu, China',
   },
   {
     icon: Mail,
-    label: 'Email',
+    label: 'contact.info.email',
     value: 'taoyixuan0415@outlook.com',
     href: 'mailto:taoyixuan0415@outlook.com',
   },
   {
     icon: Phone,
-    label: 'Phone',
+    label: 'contact.info.phone',
     value: '+86 17751006875',
     href: 'tel:+8617751006875',
   },
@@ -30,6 +31,7 @@ export function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -58,8 +60,8 @@ export function Contact() {
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
-      title: 'Message sent!',
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      title: t('contact.form.success'),
+      description: t('contact.form.successDesc'),
     });
 
     setIsSubmitting(false);
@@ -76,14 +78,13 @@ export function Contact() {
         {/* Header */}
         <div className="text-center mb-16">
           <p className="animate-on-scroll opacity-0 text-sm text-muted-foreground tracking-widest uppercase mb-4">
-            Get In Touch
+            {t('contact.title')}
           </p>
           <h2 className="animate-on-scroll opacity-0 delay-100 text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            Let's Work Together
+            {t('contact.heading')}
           </h2>
           <p className="animate-on-scroll opacity-0 delay-200 text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or just want to chat? I'd love to hear from you. 
-            Send me a message and I'll respond as soon as possible.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -100,7 +101,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">
-                    {item.label}
+                    {t(item.label)}
                   </p>
                   {item.href ? (
                     <a
@@ -119,10 +120,10 @@ export function Contact() {
             {/* Decorative element */}
             <div className="animate-on-scroll opacity-0 delay-500 hidden lg:block mt-12 p-8 rounded-3xl bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-700">
               <blockquote className="text-lg font-medium italic">
-                "The best way to predict the future is to create it."
+                "{t('contact.quote')}"
               </blockquote>
               <p className="text-sm text-muted-foreground mt-4">
-                — Peter Drucker
+                {t('contact.quoteAuthor')}
               </p>
             </div>
           </div>
@@ -135,7 +136,7 @@ export function Contact() {
             >
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
+                  <Label htmlFor="name">{t('contact.form.name')}</Label>
                   <Input
                     id="name"
                     placeholder="John Doe"
@@ -144,7 +145,7 @@ export function Contact() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">{t('contact.form.email')}</Label>
                   <Input
                     id="email"
                     type="email"
@@ -156,7 +157,7 @@ export function Contact() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="subject">Subject</Label>
+                <Label htmlFor="subject">{t('contact.form.subject')}</Label>
                 <Input
                   id="subject"
                   placeholder="Project Inquiry"
@@ -166,7 +167,7 @@ export function Contact() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message">{t('contact.form.message')}</Label>
                 <Textarea
                   id="message"
                   placeholder="Tell me about your project..."
@@ -185,12 +186,12 @@ export function Contact() {
                 {isSubmitting ? (
                   <>
                     <div className="w-4 h-4 mr-2 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending...
+                    {t('contact.form.submitting')}
                   </>
                 ) : (
                   <>
                     <Send className="w-4 h-4 mr-2" />
-                    Send Message
+                    {t('contact.form.submit')}
                   </>
                 )}
               </Button>

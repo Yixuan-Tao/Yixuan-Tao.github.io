@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { ArrowDown, Github, Linkedin, Mail, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from 'react-i18next';
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,12 +48,12 @@ export function Hero() {
 
         {/* Greeting */}
         <p className="animate-on-scroll opacity-0 delay-100 text-sm sm:text-base text-muted-foreground tracking-widest uppercase mb-4">
-          Welcome to my blog
+          {t('hero.greeting')}
         </p>
 
         {/* Main heading */}
         <h1 className="animate-on-scroll opacity-0 delay-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-          Hi, I'm{' '}
+          {t('hero.title')}{' '}
           <span className="bg-gradient-to-r from-neutral-700 to-neutral-900 dark:from-neutral-300 dark:to-neutral-100 bg-clip-text text-transparent">
             Yixuan Tao
           </span>
@@ -59,17 +61,16 @@ export function Hero() {
 
         {/* Subtitle */}
         <p className="animate-on-scroll opacity-0 delay-300 text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-          A passionate developer, writer, and creative thinker. 
-          I share my thoughts on technology, design, and life.
+          {t('hero.subtitle')}
         </p>
 
         {/* CTA Buttons */}
         <div className="animate-on-scroll opacity-0 delay-400 flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button size="lg" className="rounded-full px-8">
-            Read My Blog
+            {t('hero.cta1')}
           </Button>
           <Button variant="outline" size="lg" className="rounded-full px-8">
-            About Me
+            {t('hero.cta2')}
           </Button>
         </div>
 
