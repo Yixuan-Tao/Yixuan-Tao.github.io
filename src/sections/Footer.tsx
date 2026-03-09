@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, Heart, MessageSquare } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/Yixuan-Tao', label: 'footer.social.github' },
@@ -65,7 +65,9 @@ export function Footer() {
           <span>{t('footer.copyright', { year: currentYear })}</span>
           <span className="hidden sm:inline">·</span>
           <span className="flex items-center gap-1">
-            {t('footer.madeWith', { heart: <Heart className="w-4 h-4 text-red-500 fill-current" /> })}
+            <Trans i18nKey="footer.madeWith">
+              Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> using React
+            </Trans>
           </span>
         </div>
       </div>
