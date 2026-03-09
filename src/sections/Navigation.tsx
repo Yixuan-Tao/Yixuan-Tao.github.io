@@ -63,7 +63,7 @@ export function Navigation() {
               onClick={(e) => handleNavClick(e, '#')}
               className="text-lg font-bold"
             >
-              YN
+              YT
             </a>
 
             {/* Desktop Navigation */}
