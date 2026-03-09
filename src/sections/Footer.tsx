@@ -1,10 +1,10 @@
-import { Github, Twitter, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart, MessageSquare } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:hello@example.com', label: 'Email' },
+  { icon: Github, href: 'https://github.com/Yixuan-Tao', label: 'GitHub' },
+  { icon: MessageSquare, href: '#', label: 'WeChat' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/yixuan-tao-y78tao', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:taoyixuan0415@outlook.com', label: 'Email' },
 ];
 
 const navLinks = [
@@ -24,7 +24,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo/Brand */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-2">Your Name</h3>
+            <h3 className="text-xl font-bold mb-2">Yixuan Tao</h3>
             <p className="text-sm text-muted-foreground">
               Building digital experiences with passion.
             </p>
@@ -65,7 +65,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm text-muted-foreground">
-          <span>© {currentYear} Your Name. All rights reserved.</span>
+          <span>© {currentYear} Yixuan Tao. All rights reserved.</span>
           <span className="hidden sm:inline">·</span>
           <span className="flex items-center gap-1">
             Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> using React

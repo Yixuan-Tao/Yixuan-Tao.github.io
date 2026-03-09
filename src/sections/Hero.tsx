@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowDown, Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function Hero() {
@@ -53,7 +53,7 @@ export function Hero() {
         <h1 className="animate-on-scroll opacity-0 delay-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
           Hi, I'm{' '}
           <span className="bg-gradient-to-r from-neutral-700 to-neutral-900 dark:from-neutral-300 dark:to-neutral-100 bg-clip-text text-transparent">
-            Your Name
+            Yixuan Tao
           </span>
         </h1>
 
@@ -76,7 +76,7 @@ export function Hero() {
         {/* Social Links */}
         <div className="animate-on-scroll opacity-0 delay-500 flex justify-center gap-6">
           <a
-            href="https://github.com"
+            href="https://github.com/Yixuan-Tao"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
@@ -84,15 +84,13 @@ export function Hero() {
             <Github className="w-5 h-5" />
           </a>
           <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
             className="p-3 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
           >
-            <Twitter className="w-5 h-5" />
+            <MessageSquare className="w-5 h-5" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/yixuan-tao-y78tao"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
@@ -100,7 +98,7 @@ export function Hero() {
             <Linkedin className="w-5 h-5" />
           </a>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:taoyixuan0415@outlook.com"
             className="p-3 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
           >
             <Mail className="w-5 h-5" />

@@ -10,19 +10,19 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'Location',
-    value: 'San Francisco, CA',
+    value: 'Nanjing, Jiangsu, China',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@example.com',
-    href: 'mailto:hello@example.com',
+    value: 'taoyixuan0415@outlook.com',
+    href: 'mailto:taoyixuan0415@outlook.com',
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
+    value: '+86 17751006875',
+    href: 'tel:+8617751006875',
   },
 ];
 

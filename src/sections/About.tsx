@@ -48,7 +48,7 @@ export function About() {
             </h2>
             <div className="animate-on-scroll opacity-0 delay-200 space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Hello! I'm a full-stack developer and designer based in [Your City]. 
+                Hello! I'm a full-stack developer and designer based in Nanjing, Jiangsu, China. 
                 With over 5 years of experience in the tech industry, I've had the 
                 privilege of working with startups and established companies alike.
               </p>
