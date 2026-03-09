@@ -1,5 +1,7 @@
 # Yixuan Tao - 个人网站
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 一个现代化的个人网站，展示我的项目、技术博客和个人信息。支持中英文双语切换。
 
 ## 🌟 特性
