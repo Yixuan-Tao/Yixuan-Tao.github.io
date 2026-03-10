@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Clock, Tag } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -78,50 +79,57 @@ export function BlogPosts() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post, index) => {
             const content = t(post.key, { returnObjects: true }) as PostItem;
+            const slug = post.key.replace('blog.posts.', '');
+            const postSlug = slug === 'post1' ? 'storm-heroes-experience-system' : slug;
 
             return (
-              <Card
+              <Link 
+                to={`/post/${postSlug}`} 
                 key={post.id}
-                className={`animate-on-scroll opacity-0 delay-${(index + 3) * 100} group cursor-pointer border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card`}
+                className="block"
               >
-                <div
-                  className={`h-48 w-full ${post.image} rounded-t-lg flex items-center justify-center`}
+                <Card
+                  className={`animate-on-scroll opacity-0 delay-${(index + 3) * 100} group cursor-pointer border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card`}
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-white/80 dark:bg-black/50 backdrop-blur-sm flex items-center justify-center">
-                    <span className="text-2xl font-bold text-muted-foreground">
-                      {content.category[0]}
-                    </span>
+                  <div
+                    className={`h-48 w-full ${post.image} rounded-t-lg flex items-center justify-center`}
+                  >
+                    <div className="w-16 h-16 rounded-2xl bg-white/80 dark:bg-black/50 backdrop-blur-sm flex items-center justify-center">
+                      <span className="text-2xl font-bold text-muted-foreground">
+                        {content.category[0]}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      {content.date}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {content.readTime}
-                    </span>
-                  </div>
-                  <CardTitle className="text-xl leading-tight group-hover:text-primary transition-colors">
-                    {content.title}
-                  </CardTitle>
-                </CardHeader>
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {content.date}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {content.readTime}
+                      </span>
+                    </div>
+                    <CardTitle className="text-xl leading-tight group-hover:text-primary transition-colors">
+                      {content.title}
+                    </CardTitle>
+                  </CardHeader>
 
-                <CardContent>
-                  <CardDescription className="text-sm leading-relaxed mb-4">
-                    {content.excerpt}
-                  </CardDescription>
-                  <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary text-xs font-medium">
-                      <Tag className="w-3 h-3" />
-                      {content.category}
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
+                  <CardContent>
+                    <CardDescription className="text-sm leading-relaxed mb-4">
+                      {content.excerpt}
+                    </CardDescription>
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary text-xs font-medium">
+                        <Tag className="w-3 h-3" />
+                        {content.category}
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             );
           })}
         </div>
