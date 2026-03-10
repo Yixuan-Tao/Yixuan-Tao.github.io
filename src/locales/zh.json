@@ -63,39 +63,39 @@
         "category": "拆解"
       },
       "post2": {
-        "title": "极简设计的艺术",
-        "excerpt": "为什么少即是多。本文拆解干净、有效且有记忆点的数字界面背后的设计原则。",
-        "date": "2024 年 1 月 10 日",
-        "readTime": "6 分钟阅读",
-        "category": "设计"
+        "title": "文章1",
+        "excerpt": "文章1的摘要",
+        "date": "文章1发布日期",
+        "readTime": "文章1阅读时间",
+        "category": "文章1"
       },
       "post3": {
         "title": "我的开源之路",
-        "excerpt": "回顾参与开源项目的经历，以及这段经历如何改变我作为开发者的成长路径。",
-        "date": "2024 年 1 月 5 日",
-        "readTime": "5 分钟阅读",
-        "category": "成长"
+        "excerpt": "文章3的摘要",
+        "date": "文章3发布日期",
+        "readTime": "文章3阅读时间",
+        "category": "文章3"
       },
       "post4": {
-        "title": "TypeScript 技巧整理",
-        "excerpt": "一些高级 TypeScript 模式和实用技巧，帮助代码库更稳定，也更容易长期维护。",
-        "date": "2023 年 12 月 28 日",
-        "readTime": "10 分钟阅读",
-        "category": "开发"
+        "title": "文章4",
+        "excerpt": "文章4的摘要",
+        "date": "文章4发布日期",
+        "readTime": "文章4阅读时间",
+        "category": "文章4"
       },
       "post5": {
-        "title": "Web 开发的未来",
-        "excerpt": "从技术演进到工作流变化，看看未来几年会如何影响我们构建 Web 产品的方式。",
-        "date": "2023 年 12 月 20 日",
-        "readTime": "7 分钟阅读",
-        "category": "技术"
+        "title": "文章5",
+        "excerpt": "文章5的摘要",
+        "date": "文章5发布日期",
+        "readTime": "文章5阅读时间",
+        "category": "文章5"
       },
       "post6": {
-        "title": "掌握 CSS Grid 与 Flexbox",
-        "excerpt": "用实际案例梳理现代 CSS 布局方式，帮助你在不同场景下选对工具、写对结构。",
-        "date": "2023 年 12 月 15 日",
-        "readTime": "12 分钟阅读",
-        "category": "开发"
+        "title": "文章6",
+        "excerpt": "文章6的摘要",
+        "date": "文章6发布日期",
+        "readTime": "文章6阅读时间",
+        "category": "文章6"
       }
     }
   },

@@ -63,39 +63,39 @@
         "category": "Breakdown"
       },
       "post2": {
-        "title": "The Art of Minimalist Design",
-        "excerpt": "How less can be more in digital design. This piece breaks down the principles behind clean, effective, and memorable user interfaces.",
-        "date": "Jan 10, 2024",
-        "readTime": "6 min read",
-        "category": "Design"
+        "title": "文章1",
+        "excerpt": "文章1的摘要",
+        "date": "文章1发布日期",
+        "readTime": "文章1阅读时间",
+        "category": "文章1"
       },
       "post3": {
-        "title": "My Journey into Open Source",
-        "excerpt": "A reflection on contributing to open-source projects and how that experience reshaped my growth as a developer.",
-        "date": "Jan 5, 2024",
-        "readTime": "5 min read",
-        "category": "Career"
+        "title": "我的开源之路",
+        "excerpt": "文章3的摘要",
+        "date": "文章3发布日期",
+        "readTime": "文章3阅读时间",
+        "category": "文章3"
       },
       "post4": {
-        "title": "TypeScript Tips and Tricks",
-        "excerpt": "Advanced TypeScript patterns and practical techniques that make codebases easier to maintain and safer to evolve.",
-        "date": "Dec 28, 2023",
-        "readTime": "10 min read",
-        "category": "Development"
+        "title": "文章4",
+        "excerpt": "文章4的摘要",
+        "date": "文章4发布日期",
+        "readTime": "文章4阅读时间",
+        "category": "文章4"
       },
       "post5": {
-        "title": "The Future of Web Development",
-        "excerpt": "A look at the technologies and workflow shifts that are likely to shape how we build for the web in the coming years.",
-        "date": "Dec 20, 2023",
-        "readTime": "7 min read",
-        "category": "Technology"
+        "title": "文章5",
+        "excerpt": "文章5的摘要",
+        "date": "文章5发布日期",
+        "readTime": "文章5阅读时间",
+        "category": "文章5"
       },
       "post6": {
-        "title": "Mastering CSS Grid and Flexbox",
-        "excerpt": "A practical guide to modern CSS layout techniques, with examples that help choose the right layout tool for each job.",
-        "date": "Dec 15, 2023",
-        "readTime": "12 min read",
-        "category": "Development"
+        "title": "文章6",
+        "excerpt": "文章6的摘要",
+        "date": "文章6发布日期",
+        "readTime": "文章6阅读时间",
+        "category": "文章6"
       }
     }
   },
