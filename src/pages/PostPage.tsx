@@ -1,111 +1,192 @@
-import { useParams, useNavigate } from 'react-router-dom';
-import { Calendar, Clock, Tag, ArrowLeft } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/components/ui/button';
 import ReactMarkdown from 'react-markdown';
-import { useState, useEffect } from 'react';
+import remarkGfm from 'remark-gfm';
+import { Button } from '@/components/ui/button';
 
-// 直接导入markdown文件
-import stormHeroesContent from '../content/posts/storm-heroes-experience-system.md?raw';
+const markdownFiles = import.meta.glob('../content/posts/*.md', {
+  query: '?raw',
+  import: 'default',
+});
 
-// 简单的frontmatter解析函数
-function parseFrontmatter(content: string) {
-  const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
-  const match = content.match(frontmatterRegex);
-  
+type Post = {
+  title: string;
+  date: string;
+  readTime: string;
+  category: string;
+  content: string;
+  notFound: boolean;
+};
+
+const emptyPost: Post = {
+  title: '',
+  date: '',
+  readTime: '',
+  category: '',
+  content: '',
+  notFound: false,
+};
+
+function parseFrontmatter(source: string) {
+  const normalized = source.replace(/^\uFEFF/, '');
+  const match = normalized.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+
   if (!match) {
-    return { data: {}, content };
+    return {
+      data: {} as Record<string, string>,
+      content: normalized.trim(),
+    };
   }
-  
-  const frontmatter = match[1];
-  const markdownContent = match[2];
-  
-  const data: any = {};
-  frontmatter.split('\n').forEach(line => {
-    const [key, ...value] = line.split(': ');
-    if (key && value.length > 0) {
-      data[key] = value.join(': ').replace(/^"|"$/g, '');
+
+  const [, rawFrontmatter, content] = match;
+  const data: Record<string, string> = {};
+
+  rawFrontmatter.split(/\r?\n/).forEach((line) => {
+    const separatorIndex = line.indexOf(':');
+    if (separatorIndex === -1) return;
+
+    const key = line.slice(0, separatorIndex).trim();
+    const value = line.slice(separatorIndex + 1).trim().replace(/^['"]|['"]$/g, '');
+
+    if (key) {
+      data[key] = value;
     }
   });
-  
-  return { data, content: markdownContent };
+
+  return {
+    data,
+    content: content.trim(),
+  };
+}
+
+function extractTitleAndBody(markdown: string) {
+  const normalized = markdown.replace(/^\uFEFF/, '').trim();
+  const titleMatch = normalized.match(/^#\s+(.+?)\r?\n/);
+
+  if (!titleMatch) {
+    return {
+      title: '',
+      content: normalized,
+    };
+  }
+
+  return {
+    title: titleMatch[1].trim(),
+    content: normalized.replace(/^#\s+.+?\r?\n+/, '').trim(),
+  };
 }
 
 export function PostPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const { t } = useTranslation();
-
-  const [post, setPost] = useState({
-    title: "风暴英雄经验系统拆解",
-    date: "2026 年 3 月 1 日",
-    readTime: "8 分钟阅读",
-    category: "拆解",
-    content: ""
-  });
+  const [post, setPost] = useState<Post>(emptyPost);
 
   useEffect(() => {
-    // 加载markdown文件
-    const loadMarkdown = () => {
-      try {
-        // 根据slug选择对应的内容
-        let fileContent = '';
-        if (slug === 'storm-heroes-experience-system') {
-          fileContent = stormHeroesContent;
-        }
-        
-        // 解析frontmatter和内容
-        const { data, content } = parseFrontmatter(fileContent);
-        
-        // 更新post对象
+    const loadMarkdown = async () => {
+      if (!slug) {
         setPost({
-          title: data.title || post.title,
-          date: data.date || post.date,
-          readTime: data.readTime || post.readTime,
-          category: data.category || post.category,
-          content: content
+          ...emptyPost,
+          notFound: true,
+          title: '文章未找到',
+          content: '当前没有可显示的文章。',
+        });
+        return;
+      }
+
+      const filePath = `../content/posts/${slug}.md`;
+      const importer = markdownFiles[filePath] as (() => Promise<string>) | undefined;
+
+      if (!importer) {
+        setPost({
+          ...emptyPost,
+          notFound: true,
+          title: '文章未找到',
+          content: `未找到 slug 为 "${slug}" 的 Markdown 文件。`,
+        });
+        return;
+      }
+
+      try {
+        const source = await importer();
+        const { data, content } = parseFrontmatter(source);
+        const extracted = extractTitleAndBody(content);
+
+        setPost({
+          title: data.title || extracted.title || '未命名文章',
+          date: data.date || '',
+          readTime: data.readTime || '',
+          category: data.category || 'Markdown',
+          content: extracted.content || content.trim(),
+          notFound: false,
         });
       } catch (error) {
         console.error('Error loading markdown file:', error);
+        setPost({
+          ...emptyPost,
+          notFound: true,
+          title: '文章加载失败',
+          content: 'Markdown 文件加载失败，请检查文件格式或路径。',
+        });
       }
     };
 
-    loadMarkdown();
+    void loadMarkdown();
   }, [slug]);
 
   return (
-    <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
-        <Button 
-          variant="outline" 
-          className="mb-8" 
+    <div className="min-h-screen bg-background py-12 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl">
+        <Button
+          variant="outline"
+          className="mb-8 rounded-full"
           onClick={() => navigate('/#blog')}
         >
-          <ArrowLeft className="w-4 h-4 mr-2" />
+          <ArrowLeft className="mr-2 h-4 w-4" />
           {t('blog.viewAll')}
         </Button>
-        
-        <div className="mb-8">
-          <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
-            <span className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
-              {post.date}
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock className="w-4 h-4" />
-              {post.readTime}
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-6">{post.title}</h1>
-          <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary text-sm font-medium mb-8">
-            <Tag className="w-3 h-3" />
-            {post.category}
-          </div>
-        </div>
 
-        <div className="prose prose-lg max-w-none">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
-        </div>
+        <header className="mb-8 rounded-2xl border bg-card p-6 shadow-sm sm:p-8">
+          <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+            {post.date ? (
+              <span className="flex items-center gap-1">
+                <Calendar className="h-4 w-4" />
+                {post.date}
+              </span>
+            ) : null}
+            {post.readTime ? (
+              <span className="flex items-center gap-1">
+                <Clock className="h-4 w-4" />
+                {post.readTime}
+              </span>
+            ) : null}
+          </div>
+
+          <h1 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl">
+            {post.title}
+          </h1>
+
+          {post.category ? (
+            <div className="inline-flex items-center gap-1 rounded-full bg-secondary px-3 py-1 text-sm font-medium">
+              <Tag className="h-3 w-3" />
+              {post.category}
+            </div>
+          ) : null}
+        </header>
+
+        <article className="rounded-2xl border bg-card p-6 shadow-sm sm:p-8">
+          <div className="markdown-body">
+            {post.notFound ? (
+              <p>{post.content}</p>
+            ) : (
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {post.content}
+              </ReactMarkdown>
+            )}
+          </div>
+        </article>
       </div>
     </div>
   );
