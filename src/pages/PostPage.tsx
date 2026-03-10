@@ -3,11 +3,33 @@ import { Calendar, Clock, Tag, ArrowLeft } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import ReactMarkdown from 'react-markdown';
-import matter from 'gray-matter';
 import { useState, useEffect } from 'react';
 
-// 使用Vite的import.meta.glob动态导入markdown文件
-const markdownFiles = import.meta.glob('../content/posts/*.md', { query: '?raw', import: 'default' });
+// 直接导入markdown文件
+import stormHeroesContent from '../content/posts/storm-heroes-experience-system.md?raw';
+
+// 简单的frontmatter解析函数
+function parseFrontmatter(content: string) {
+  const frontmatterRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/;
+  const match = content.match(frontmatterRegex);
+  
+  if (!match) {
+    return { data: {}, content };
+  }
+  
+  const frontmatter = match[1];
+  const markdownContent = match[2];
+  
+  const data: any = {};
+  frontmatter.split('\n').forEach(line => {
+    const [key, ...value] = line.split(': ');
+    if (key && value.length > 0) {
+      data[key] = value.join(': ').replace(/^"|"$/g, '');
+    }
+  });
+  
+  return { data, content: markdownContent };
+}
 
 export function PostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -23,14 +45,17 @@ export function PostPage() {
   });
 
   useEffect(() => {
-    // 动态加载对应的markdown文件
-    const loadMarkdown = async () => {
+    // 加载markdown文件
+    const loadMarkdown = () => {
       try {
-        const filePath = `../content/posts/${slug}.md`;
-        const fileContent = await markdownFiles[filePath]();
+        // 根据slug选择对应的内容
+        let fileContent = '';
+        if (slug === 'storm-heroes-experience-system') {
+          fileContent = stormHeroesContent;
+        }
         
         // 解析frontmatter和内容
-        const { data, content } = matter(fileContent);
+        const { data, content } = parseFrontmatter(fileContent);
         
         // 更新post对象
         setPost({
