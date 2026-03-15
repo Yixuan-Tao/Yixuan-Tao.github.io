@@ -166,7 +166,7 @@
       "linkedin": "LinkedIn",
       "email": "邮箱"
     },
-    "copyright": "© {{year}} Yixuan Tao。保留所有权利。",
+    "copyright": "© {{year}} Yixuan Tao 保留所有权利。",
     "madeWith": "使用 React 与 <1></1> 构建"
   }
 }

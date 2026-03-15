@@ -83,6 +83,18 @@ export function PostPage() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [post, setPost] = useState<Post>(emptyPost);
+  // 添加一个状态来触发重新加载
+  const [reloadKey, setReloadKey] = useState(0);
+
+  // 监听热更新
+  useEffect(() => {
+    if (import.meta.hot) {
+      import.meta.hot.on('vite:beforeUpdate', () => {
+        // 当文件变化时，增加reloadKey来触发重新加载
+        setReloadKey(prev => prev + 1);
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const loadMarkdown = async () => {
@@ -134,7 +146,7 @@ export function PostPage() {
     };
 
     void loadMarkdown();
-  }, [slug]);
+  }, [slug, reloadKey]);
 
   return (
     <div className="min-h-screen bg-background py-12 px-4 sm:px-6 lg:px-8">
