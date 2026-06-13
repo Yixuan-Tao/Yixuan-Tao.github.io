@@ -4,7 +4,9 @@
     "about": "About",
     "blog": "Blog",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
   },
   "languageSwitcher": {
     "toggle": "Switch language",

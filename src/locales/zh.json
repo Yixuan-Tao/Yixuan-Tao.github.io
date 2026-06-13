@@ -4,7 +4,9 @@
     "about": "关于",
     "blog": "博客",
     "projects": "项目",
-    "contact": "联系"
+    "contact": "联系",
+    "openMenu": "打开导航菜单",
+    "closeMenu": "关闭导航菜单"
   },
   "languageSwitcher": {
     "toggle": "切换语言",
