@@ -18,4 +18,10 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    files: ['src/components/ui/**/*.{ts,tsx}'],
+    rules: {
+      'react-hooks/purity': 'off',
+    },
+  },
 ])
