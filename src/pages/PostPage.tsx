@@ -5,96 +5,34 @@ import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Button } from '@/components/ui/button';
+import { parseMarkdownPost, type Post } from '@/lib/posts';
 
 const markdownFiles = import.meta.glob('../content/posts/*.md', {
   query: '?raw',
   import: 'default',
 });
 
-type Post = {
-  title: string;
-  date: string;
-  readTime: string;
-  category: string;
-  content: string;
+type PostState = Post & {
   notFound: boolean;
 };
 
-const emptyPost: Post = {
+const emptyPost: PostState = {
+  slug: '',
   title: '',
   date: '',
   readTime: '',
   category: '',
+  excerpt: '',
+  icon: '',
   content: '',
   notFound: false,
 };
-
-function parseFrontmatter(source: string) {
-  const normalized = source.replace(/^\uFEFF/, '');
-  const match = normalized.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
-
-  if (!match) {
-    return {
-      data: {} as Record<string, string>,
-      content: normalized.trim(),
-    };
-  }
-
-  const [, rawFrontmatter, content] = match;
-  const data: Record<string, string> = {};
-
-  rawFrontmatter.split(/\r?\n/).forEach((line) => {
-    const separatorIndex = line.indexOf(':');
-    if (separatorIndex === -1) return;
-
-    const key = line.slice(0, separatorIndex).trim();
-    const value = line.slice(separatorIndex + 1).trim().replace(/^['"]|['"]$/g, '');
-
-    if (key) {
-      data[key] = value;
-    }
-  });
-
-  return {
-    data,
-    content: content.trim(),
-  };
-}
-
-function extractTitleAndBody(markdown: string) {
-  const normalized = markdown.replace(/^\uFEFF/, '').trim();
-  const titleMatch = normalized.match(/^#\s+(.+?)\r?\n/);
-
-  if (!titleMatch) {
-    return {
-      title: '',
-      content: normalized,
-    };
-  }
-
-  return {
-    title: titleMatch[1].trim(),
-    content: normalized.replace(/^#\s+.+?\r?\n+/, '').trim(),
-  };
-}
 
 export function PostPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [post, setPost] = useState<Post>(emptyPost);
-  // 添加一个状态来触发重新加载
-  const [reloadKey, setReloadKey] = useState(0);
-
-  // 监听热更新
-  useEffect(() => {
-    if (import.meta.hot) {
-      import.meta.hot.on('vite:beforeUpdate', () => {
-        // 当文件变化时，增加reloadKey来触发重新加载
-        setReloadKey(prev => prev + 1);
-      });
-    }
-  }, []);
+  const [post, setPost] = useState<PostState>(emptyPost);
 
   useEffect(() => {
     const loadMarkdown = async () => {
@@ -123,15 +61,8 @@ export function PostPage() {
 
       try {
         const source = await importer();
-        const { data, content } = parseFrontmatter(source);
-        const extracted = extractTitleAndBody(content);
-
         setPost({
-          title: data.title || extracted.title || '未命名文章',
-          date: data.date || '',
-          readTime: data.readTime || '',
-          category: data.category || 'Markdown',
-          content: extracted.content || content.trim(),
+          ...parseMarkdownPost(String(source), slug),
           notFound: false,
         });
       } catch (error) {
@@ -146,7 +77,7 @@ export function PostPage() {
     };
 
     void loadMarkdown();
-  }, [slug, reloadKey]);
+  }, [slug]);
 
   return (
     <div className="min-h-screen bg-background py-12 px-4 sm:px-6 lg:px-8">

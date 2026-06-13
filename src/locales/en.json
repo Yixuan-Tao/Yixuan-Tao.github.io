@@ -12,11 +12,14 @@
     "en": "English"
   },
   "hero": {
-    "greeting": "Welcome to my blog",
+    "greeting": "Game Systems · Design Thinking · Technical Implementation",
     "title": "Hi, I'm",
-    "subtitle": "I focus on game systems analysis, design thinking, and technical experimentation, and I write about the logic behind how games and products work.",
+    "subtitle": "I analyze how game systems shape player behavior and turn design ideas into playable technical prototypes.",
     "cta1": "Read My Blog",
     "cta2": "About Me",
+    "ctaProjects": "View Projects",
+    "ctaBlog": "Read Analysis",
+    "ctaContact": "Contact Me",
     "name": "Yixuan Tao"
   },
   "about": {
@@ -100,53 +103,42 @@
     }
   },
   "projects": {
-    "title": "Some Projects for Tech & Design",
-    "heading": "Mod & Demo",
-    "subtitle": "Here are some projects I've done.",
+    "title": "Selected Work",
+    "heading": "Verifiable design and implementation",
+    "subtitle": "Focused work around game systems, gameplay prototypes, and technical implementation.",
     "code": "Code",
     "demo": "Live Demo",
     "items": {
-      "project1": {
+      "airstrike": {
         "name": "Airstrike",
-        "description": "A 2D shooting game built with Godot, featuring basic game mechanics, player controls, and enemy AI."
-      },
-      "project2": {
-        "name": "Placeholder 1",
-        "description": "Placeholder 2"
-      },
-      "project3": {
-        "name": "Placeholder 1",
-        "description": "Placeholder 2"
-      },
-      "project4": {
-        "name": "Placeholder 1",
-        "description": "Placeholder 2"
+        "description": "A Godot-based 2D shooter prototype for testing core combat loops, enemy behavior, and player control feel.",
+        "role": "Solo project · Gameplay prototype and technical implementation",
+        "highlights": [
+          "Implemented player movement, shooting, enemy spawning, and collision feedback.",
+          "Used a compact prototype to test shooting rhythm, pressure, and level readability.",
+          "Kept the source open so reviewers can inspect implementation quality and iteration potential."
+        ]
       }
     }
   },
   "contact": {
     "title": "Get In Touch",
-    "heading": "Let's Work Together",
-    "subtitle": "Have a project in mind or just want to chat? Send me a message and I'll get back to you as soon as possible.",
+    "heading": "Hiring and collaboration contact",
+    "subtitle": "For projects, portfolio details, or application materials, reach me directly by email, LinkedIn, or GitHub.",
     "info": {
       "location": "Location",
       "locationValue": "Nanjing, Jiangsu, China",
-      "email": "Email",
-      "phone": "Phone"
+      "email": "Email"
     },
-    "form": {
-      "name": "Name",
+    "links": {
       "email": "Email",
-      "subject": "Subject",
-      "message": "Message",
-      "namePlaceholder": "John Doe",
-      "emailPlaceholder": "john@example.com",
-      "subjectPlaceholder": "Project Inquiry",
-      "messagePlaceholder": "Tell me about your project...",
-      "submit": "Send Message",
-      "submitting": "Sending...",
-      "success": "Message sent",
-      "successDesc": "Thank you for reaching out. I'll get back to you soon."
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "resume": "Resume"
+    },
+    "direct": {
+      "title": "Direct contact",
+      "description": "This site avoids a fake form without a backend. Email is the primary contact path, with LinkedIn and GitHub available for additional context."
     },
     "quote": "The best way to predict the future is to create it.",
     "quoteAuthor": "Peter Drucker"

@@ -7,7 +7,6 @@ import { Projects } from '@/sections/Projects';
 import { Contact } from '@/sections/Contact';
 import { Footer } from '@/sections/Footer';
 import { PostPage } from '@/pages/PostPage';
-import { Toaster } from '@/components/ui/sonner';
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
               <Contact />
             </main>
             <Footer />
-            <Toaster position="bottom-right" />
           </div>
         } />
         <Route path="/post/:slug" element={<PostPage />} />

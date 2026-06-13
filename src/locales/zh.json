@@ -12,11 +12,14 @@
     "en": "English"
   },
   "hero": {
-    "greeting": "欢迎来到我的博客",
+    "greeting": "游戏系统 · 设计思维 · 技术实现",
     "title": "你好，我是",
-    "subtitle": "我专注于游戏系统分析、设计思维和技术实验，也记录自己对游戏与产品运行逻辑的观察与思考。",
+    "subtitle": "我专注于拆解游戏系统如何塑造玩家行为，并用技术原型把设计想法转化为可体验的作品。",
     "cta1": "阅读博客",
     "cta2": "关于我",
+    "ctaProjects": "查看项目",
+    "ctaBlog": "阅读分析",
+    "ctaContact": "联系我",
     "name": "Yixuan Tao"
   },
   "about": {
@@ -100,53 +103,42 @@
     }
   },
   "projects": {
-    "title": "一些用于技术和设计",
-    "heading": "Mod & Demo",
-    "subtitle": "这里整理了一些我做过的项目。",
+    "title": "项目作品",
+    "heading": "可验证的设计与实现",
+    "subtitle": "重点展示与游戏系统、玩法原型和技术实现相关的作品。",
     "code": "源码",
     "demo": "在线演示",
     "items": {
-      "project1": {
+      "airstrike": {
         "name": "Airstrike",
-        "description": "一个基于Godot引擎的2D射击游戏，包含基本的游戏机制、玩家控制和敌人。"
-      },
-      "project2": {
-        "name": "占位1",
-        "description": "占位2"
-      },
-      "project3": {
-        "name": "占位1",
-        "description": "占位2"
-      },
-      "project4": {
-        "name": "占位1",
-        "description": "占位2"
+        "description": "一个基于 Godot 的 2D 射击游戏原型，用于验证基础战斗循环、敌人行为和玩家控制手感。",
+        "role": "个人项目 · 玩法原型与技术实现",
+        "highlights": [
+          "实现玩家移动、射击、敌人生成与基础碰撞反馈。",
+          "用小型原型验证射击节奏、目标压力和关卡可读性。",
+          "保留源码，便于招聘方检查实现方式和迭代潜力。"
+        ]
       }
     }
   },
   "contact": {
     "title": "联系我",
-    "heading": "一起做点东西",
-    "subtitle": "如果你有项目想法，或者只是想交流一下，都可以给我发消息，我会尽快回复。",
+    "heading": "求职与合作联系",
+    "subtitle": "如果你想了解我的项目、文章或求职材料，可以直接通过邮箱、LinkedIn 或 GitHub 联系我。",
     "info": {
       "location": "所在地",
       "locationValue": "中国江苏南京",
-      "email": "邮箱",
-      "phone": "电话"
+      "email": "邮箱"
     },
-    "form": {
-      "name": "姓名",
+    "links": {
       "email": "邮箱",
-      "subject": "主题",
-      "message": "内容",
-      "namePlaceholder": "张三",
-      "emailPlaceholder": "name@example.com",
-      "subjectPlaceholder": "项目咨询",
-      "messagePlaceholder": "可以简单介绍一下你的项目或想法……",
-      "submit": "发送消息",
-      "submitting": "发送中...",
-      "success": "消息已发送",
-      "successDesc": "感谢你的联系，我会尽快回复。"
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "resume": "简历"
+    },
+    "direct": {
+      "title": "直接联系",
+      "description": "当前不使用无后端表单，避免访客误以为消息已经提交。邮箱是主要联系渠道，LinkedIn 和 GitHub 用于补充了解经历与代码。"
     },
     "quote": "预测未来的最好方式，就是亲手创造它。",
     "quoteAuthor": "彼得·德鲁克"

@@ -3,6 +3,7 @@ import { ExternalLink, Github } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { projects } from '@/data/site';
 import {
   Card,
   CardContent,
@@ -10,46 +11,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-
-const projects = [
-  {
-    id: 1,
-    key: 'projects.items.project1',
-    tags: ['Godot'],
-    github: 'https://github.com/Yixuan-Tao/Airstrike',
-    demo: 'https://demo.com',
-    image: 'bg-gradient-to-br from-cyan-500/20 to-blue-500/20',
-  },
-  {
-    id: 2,
-    key: 'projects.items.project2',
-    tags: ['project2'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-    image: 'bg-gradient-to-br from-purple-500/20 to-pink-500/20',
-  },
-  {
-    id: 3,
-    key: 'projects.items.project3',
-    tags: ['project3'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-    image: 'bg-gradient-to-br from-emerald-500/20 to-teal-500/20',
-  },
-  {
-    id: 4,
-    key: 'projects.items.project4',
-    tags: ['project4'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
-    image: 'bg-gradient-to-br from-amber-500/20 to-orange-500/20',
-  },
-];
-
-type ProjectItem = {
-  name: string;
-  description: string;
-};
 
 export function Projects() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -95,7 +56,9 @@ export function Projects() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => {
-            const content = t(project.key, { returnObjects: true }) as ProjectItem;
+            const highlights = t(project.highlightsKey, {
+              returnObjects: true,
+            }) as string[];
 
             return (
               <Card
@@ -103,26 +66,40 @@ export function Projects() {
                 className={`animate-on-scroll opacity-0 delay-${(index + 3) * 100} group border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden bg-card`}
               >
                 <div
-                  className={`h-56 w-full ${project.image} flex items-center justify-center relative overflow-hidden`}
+                  className={`h-56 w-full ${project.accentClass} flex items-center justify-center relative overflow-hidden`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="w-20 h-20 rounded-3xl bg-white/90 dark:bg-black/70 backdrop-blur-sm flex items-center justify-center shadow-xl">
-                    <span className="text-3xl font-bold">{content.name[0]}</span>
+                    <span className="text-3xl font-bold">
+                      {t(project.titleKey).slice(0, 1)}
+                    </span>
                   </div>
                 </div>
 
                 <CardHeader className="pb-3">
                   <div>
-                    <CardTitle className="text-xl mb-2">{content.name}</CardTitle>
+                    <CardTitle className="text-xl mb-2">
+                      {t(project.titleKey)}
+                    </CardTitle>
                     <CardDescription className="text-sm leading-relaxed">
-                      {content.description}
+                      {t(project.descriptionKey)}
                     </CardDescription>
                   </div>
                 </CardHeader>
 
                 <CardContent>
+                  <p className="mb-4 text-sm font-medium text-foreground">
+                    {t(project.roleKey)}
+                  </p>
+                  <ul className="mb-6 space-y-2 text-sm text-muted-foreground">
+                    {highlights.map((highlight) => (
+                      <li key={highlight} className="leading-relaxed">
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
+                    {project.techStack.map((tag) => (
                       <Badge key={tag} variant="secondary" className="rounded-full">
                         {tag}
                       </Badge>
@@ -137,7 +114,7 @@ export function Projects() {
                       asChild
                     >
                       <a
-                        href={project.github}
+                        href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -145,20 +122,22 @@ export function Projects() {
                         {t('projects.code')}
                       </a>
                     </Button>
-                    <Button
-                      size="sm"
-                      className="rounded-full flex-1 group/btn"
-                      asChild
-                    >
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    {project.demoUrl ? (
+                      <Button
+                        size="sm"
+                        className="rounded-full flex-1 group/btn"
+                        asChild
                       >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        {t('projects.demo')}
-                      </a>
-                    </Button>
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          {t('projects.demo')}
+                        </a>
+                      </Button>
+                    ) : null}
                   </div>
                 </CardContent>
               </Card>

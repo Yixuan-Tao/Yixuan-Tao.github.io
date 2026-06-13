@@ -1,7 +1,15 @@
 import { useEffect, useRef } from 'react';
-import { ArrowDown, Github, Linkedin, Mail, MessageSquare } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
+import { socialLinks } from '@/data/site';
+
+const iconMap = {
+  email: Mail,
+  github: Github,
+  linkedin: Linkedin,
+  resume: Mail,
+};
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -34,15 +42,11 @@ export function Hero() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 via-white to-neutral-100 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950" />
       
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-neutral-200/50 dark:bg-neutral-800/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-neutral-300/30 dark:bg-neutral-700/20 rounded-full blur-3xl" />
-
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Avatar */}
         <div className="animate-on-scroll opacity-0 mb-8">
-          <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-neutral-300 to-neutral-500 dark:from-neutral-600 dark:to-neutral-800 flex items-center justify-center text-4xl font-bold text-white shadow-2xl">
-            ME
+          <div className="w-32 h-32 mx-auto rounded-full bg-neutral-900 dark:bg-neutral-100 flex items-center justify-center text-4xl font-bold text-white dark:text-neutral-950 shadow-2xl">
+            YT
           </div>
         </div>
 
@@ -66,44 +70,35 @@ export function Hero() {
 
         {/* CTA Buttons */}
         <div className="animate-on-scroll opacity-0 delay-400 flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button size="lg" className="rounded-full px-8">
-            {t('hero.cta1')}
+          <Button size="lg" className="rounded-full px-8" asChild>
+            <a href="#projects">{t('hero.ctaProjects')}</a>
           </Button>
-          <Button variant="outline" size="lg" className="rounded-full px-8">
-            {t('hero.cta2')}
+          <Button variant="outline" size="lg" className="rounded-full px-8" asChild>
+            <a href="#blog">{t('hero.ctaBlog')}</a>
+          </Button>
+          <Button variant="ghost" size="lg" className="rounded-full px-8" asChild>
+            <a href="#contact">{t('hero.ctaContact')}</a>
           </Button>
         </div>
 
         {/* Social Links */}
         <div className="animate-on-scroll opacity-0 delay-500 flex justify-center gap-6">
-          <a
-            href="https://github.com/Yixuan-Tao"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <Github className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
-            className="p-3 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <MessageSquare className="w-5 h-5" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/yixuan-tao-y78tao"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <Linkedin className="w-5 h-5" />
-          </a>
-          <a
-            href="mailto:taoyixuan0415@outlook.com"
-            className="p-3 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <Mail className="w-5 h-5" />
-          </a>
+          {socialLinks.map((link) => {
+            const Icon = iconMap[link.type];
+
+            return (
+              <a
+                key={link.type}
+                href={link.href}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+                aria-label={t(link.labelKey)}
+                className="p-3 rounded-full bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            );
+          })}
         </div>
       </div>
 

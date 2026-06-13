@@ -1,12 +1,13 @@
-import { Github, Linkedin, Mail, Heart, MessageSquare } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import { useTranslation, Trans } from 'react-i18next';
+import { socialLinks } from '@/data/site';
 
-const socialLinks = [
-  { icon: Github, href: 'https://github.com/Yixuan-Tao', label: 'footer.social.github' },
-  { icon: MessageSquare, href: '#', label: 'footer.social.wechat' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/yixuan-tao-y78tao', label: 'footer.social.linkedin' },
-  { icon: Mail, href: 'mailto:taoyixuan0415@outlook.com', label: 'footer.social.email' },
-];
+const iconMap = {
+  email: Mail,
+  github: Github,
+  linkedin: Linkedin,
+  resume: Mail,
+};
 
 const navLinks = [
   { label: 'footer.nav.home', href: '#' },
@@ -44,18 +45,22 @@ export function Footer() {
           </nav>
 
           <div className="flex gap-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
-                aria-label={t(link.label)}
-              >
-                <link.icon className="w-4 h-4" />
-              </a>
-            ))}
+            {socialLinks.map((link) => {
+              const Icon = iconMap[link.type];
+
+              return (
+                <a
+                  key={link.type}
+                  href={link.href}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
+                  className="p-2 rounded-full bg-secondary hover:bg-secondary/80 transition-colors"
+                  aria-label={t(link.labelKey)}
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              );
+            })}
           </div>
         </div>
 
