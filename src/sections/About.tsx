@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react';
-import { Code, PenTool, Coffee, Globe } from 'lucide-react';
+import { Bot, Code, Coffee, Database, PenTool } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const skills = [
+  { name: 'about.skills.llmAgent', icon: Bot, level: 90 },
+  { name: 'about.skills.rag', icon: Database, level: 85 },
+  { name: 'about.skills.pythonDataTools', icon: Coffee, level: 90 },
   { name: 'about.skills.systemDesign', icon: Code, level: 85 },
   { name: 'about.skills.gameplayAnalysis', icon: PenTool, level: 80 },
-  { name: 'about.skills.pythonDataTools', icon: Coffee, level: 90 },
-  { name: 'about.skills.technicalImplementation', icon: Globe, level: 70 },
 ];
 
 type StatItem = {
@@ -18,10 +19,10 @@ export function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
   const stats = [
-    t('about.stats.caseStudies', { returnObjects: true }),
-    t('about.stats.demo', { returnObjects: true }),
+    t('about.stats.articles', { returnObjects: true }),
+    t('about.stats.internships', { returnObjects: true }),
+    t('about.stats.playableDemo', { returnObjects: true }),
     t('about.stats.graduation', { returnObjects: true }),
-    t('about.stats.skillsDevelopment', { returnObjects: true }),
   ] as StatItem[];
 
   useEffect(() => {

@@ -7,6 +7,8 @@ import { Projects } from '@/sections/Projects';
 import { Contact } from '@/sections/Contact';
 import { Footer } from '@/sections/Footer';
 import { PostPage } from '@/pages/PostPage';
+import { ProjectPage } from '@/pages/ProjectPage';
+import { PlayPage } from '@/pages/PlayPage';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           </div>
         } />
         <Route path="/post/:slug" element={<PostPage />} />
+        <Route path="/project/:slug" element={<ProjectPage />} />
+        <Route path="/play/chrono-front" element={<PlayPage />} />
       </Routes>
     </Router>
   );

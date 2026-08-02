@@ -14,9 +14,9 @@
     "en": "English"
   },
   "hero": {
-    "greeting": "游戏系统 · 设计思维 · 技术实现",
+    "greeting": "大模型应用 × 游戏系统设计",
     "title": "你好，我是",
-    "subtitle": "我专注于拆解游戏系统如何塑造玩家行为，并用技术原型把设计想法转化为可体验的作品。",
+    "subtitle": "我是一名大模型应用开发者与游戏系统研究者：用智能体、RAG 与多 Agent 系统解决真实问题，也用系统拆解和可玩的 Demo 探索游戏设计。",
     "cta1": "阅读博客",
     "cta2": "关于我",
     "ctaProjects": "查看项目",
@@ -27,31 +27,32 @@
   "about": {
     "title": "关于我",
     "heading": "理解系统，构建更好的体验",
-    "content1": "我关注游戏系统如何影响玩家行为、节奏控制以及长期参与度。通过案例研究、系统拆解和技术项目，我持续探索游戏设计逻辑与实际实现之间的连接点。",
-    "content2": "我的工作覆盖玩法分析、系统设计思考以及动手开发。我在意的是一个想法如何被转化为规则、界面和用户真正能感受到的体验。",
-    "content3": "这个网站整理了我在游戏系统、设计思维与技术实验方面的内容，也作为我持续记录研究、笔记和项目的地方。",
+    "content1": "我同时在做两件事：一边把大模型应用到真实工程场景——智能体、检索增强生成与多 Agent 系统；一边拆解游戏系统，研究规则如何塑造玩家行为与体验。",
+    "content2": "实习期间我从零构建过企业内网的多模态 RAG 知识库与 ReAct 编排内核，课余也用 Godot 做出可玩性完整的游戏 Demo；我在意的是想法如何被转化为真正可运行、可被感知的东西。",
+    "content3": "这个网站整理了我的 AI 工程实践与游戏系统研究，也作为我持续记录、写作和迭代作品的场所。",
     "skills": {
-      "systemDesign": "系统设计",
-      "gameplayAnalysis": "玩法分析",
-      "pythonDataTools": "Python 与数据工具",
-      "technicalImplementation": "技术实现"
+      "llmAgent": "LLM / Agent 应用",
+      "rag": "RAG 与检索系统",
+      "pythonDataTools": "Python 数据工具",
+      "systemDesign": "游戏系统设计",
+      "gameplayAnalysis": "玩法分析"
     },
     "stats": {
-      "caseStudies": {
-        "value": "3+",
-        "label": "案例研究"
+      "articles": {
+        "value": "2",
+        "label": "拆解文章"
       },
-      "demo": {
-        "value": "2+",
-        "label": "演示项目"
+      "internships": {
+        "value": "3",
+        "label": "实习项目"
+      },
+      "playableDemo": {
+        "value": "1",
+        "label": "可玩 Demo"
       },
       "graduation": {
         "value": "2027.12",
         "label": "预计毕业"
-      },
-      "skillsDevelopment": {
-        "value": "持续中",
-        "label": "技能成长"
       }
     }
   },
@@ -68,57 +69,61 @@
         "category": "拆解"
       },
       "post2": {
-        "title": "文章1",
-        "excerpt": "文章1的摘要",
-        "date": "文章1发布日期",
-        "readTime": "文章1阅读时间",
-        "category": "文章1"
-      },
-      "post3": {
-        "title": "我的开源之路",
-        "excerpt": "文章3的摘要",
-        "date": "文章3发布日期",
-        "readTime": "文章3阅读时间",
-        "category": "文章3"
-      },
-      "post4": {
-        "title": "文章4",
-        "excerpt": "文章4的摘要",
-        "date": "文章4发布日期",
-        "readTime": "文章4阅读时间",
-        "category": "文章4"
-      },
-      "post5": {
-        "title": "文章5",
-        "excerpt": "文章5的摘要",
-        "date": "文章5发布日期",
-        "readTime": "文章5阅读时间",
-        "category": "文章5"
-      },
-      "post6": {
-        "title": "文章6",
-        "excerpt": "文章6的摘要",
-        "date": "文章6发布日期",
-        "readTime": "文章6阅读时间",
-        "category": "文章6"
+        "title": "风暴英雄多地图机制竞品分析",
+        "excerpt": "深度分析风暴英雄多地图机制的设计理念，并与英雄联盟、王者荣耀进行全方位对比。",
+        "date": "2026 年 3 月 15 日",
+        "readTime": "10 分钟阅读",
+        "category": "竞品分析"
       }
     }
   },
   "projects": {
-    "title": "项目作品",
-    "heading": "可验证的设计与实现",
-    "subtitle": "重点展示与游戏系统、玩法原型和技术实现相关的作品。",
+    "title": "AI 应用 × 游戏设计",
+    "heading": "项目实践",
+    "subtitle": "从智能体与 RAG 系统，到可玩的游戏 Demo——一些我真正动手做过的项目。",
     "code": "源码",
-    "demo": "在线演示",
+    "demo": "在线试玩",
+    "detail": "查看详情",
+    "back": "返回项目",
+    "groupAI": "AI / Agent 项目",
+    "groupGame": "游戏项目",
     "items": {
+      "platform": {
+        "name": "统一企业 Agent 平台",
+        "description": "整合自研组件与实习期间三块核心能力（多模态 RAG、ReAct 编排内核、EMC 对比工具）的企业级多 Agent 平台。",
+        "role": "实习 · 大模型应用开发（延锋 AI 中台）",
+        "highlights": [
+          "FastAPI 网关 + Next.js 前端，SSE 流式对话；LangGraph Supervisor 编排四个专家 Agent。",
+          "多模态 RAG：BGE-M3 稠密 + BM25 稀疏双路检索，RRF 融合与 Reranker 重排，支持文本跨模态召回图文。",
+          "ReAct 编排内核 + 插件化工具加载 + 短/长期记忆；Ragas 六项指标评估与 Langfuse 链路追踪。"
+        ]
+      },
+      "itAgent": {
+        "name": "IT 支持 AI Agent",
+        "description": "面向中小企业内部 IT 场景的智能体：RAG 知识问答、LangGraph 工单流程、Jira 自动建单与人工升级。",
+        "role": "个人项目 · 全栈实现",
+        "highlights": [
+          "意图路由 + 多轮信息补全，自动生成结构化工单并调用 Jira API 创建。",
+          "检索置信度低或涉及权限问题时自动转人工，形成处理闭环。"
+        ]
+      },
       "airstrike": {
         "name": "Airstrike",
-        "description": "一个基于 Godot 的 2D 射击游戏原型，用于验证基础战斗循环、敌人行为和玩家控制手感。",
-        "role": "个人项目 · 玩法原型与技术实现",
+        "description": "基于 Godot 的 2D 火箭防御游戏：20 波递增敌人、五种道具、可破坏地形与内置地图编辑器。",
+        "role": "个人项目 · 独立开发",
         "highlights": [
-          "实现玩家移动、射击、敌人生成与基础碰撞反馈。",
-          "用小型原型验证射击节奏、目标压力和关卡可读性。",
-          "保留源码，便于招聘方检查实现方式和迭代潜力。"
+          "20 个递增难度波次，四类敌机与友好单位，波次配置由 CSV 驱动。",
+          "跳跃靴、连锁火箭、穿透、EMP 等五种道具，可破坏地形与内置地图编辑器。"
+        ]
+      },
+      "chronoFront": {
+        "name": "时序战线 Chrono Front",
+        "description": "面向游戏策划作品集的卡牌 Roguelite MVP：六名英雄、24 张角色牌、12 个职业天赋与三阶段 Boss 战，网页版可在线试玩。",
+        "role": "个人项目 · 系统设计与实现",
+        "highlights": [
+          "确定性战斗规则层与表现层分离，headless 可测；卡牌、英雄与遭遇全部 JSON 驱动。",
+          "回合制三槽位决策：接敌 / 交锋 / 终结位置效果差异化，敌方意图公开显示。",
+          "Godot Web 导出，可在本站在线试玩。"
         ]
       }
     }
@@ -162,5 +167,8 @@
     },
     "copyright": "© {{year}} Yixuan Tao 保留所有权利。",
     "madeWith": "使用 React 与 <1></1> 构建"
+  },
+  "projectPage": {
+    "notFound": "项目未找到"
   }
 }

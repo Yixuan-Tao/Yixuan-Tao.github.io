@@ -14,9 +14,9 @@
     "en": "English"
   },
   "hero": {
-    "greeting": "Game Systems · Design Thinking · Technical Implementation",
+    "greeting": "LLM Engineering × Game Systems Design",
     "title": "Hi, I'm",
-    "subtitle": "I analyze how game systems shape player behavior and turn design ideas into playable technical prototypes.",
+    "subtitle": "I'm an LLM application engineer and game systems researcher: I build agents, RAG, and multi-agent systems for real problems, and I explore game design through system breakdowns and playable demos.",
     "cta1": "Read My Blog",
     "cta2": "About Me",
     "ctaProjects": "View Projects",
@@ -27,31 +27,32 @@
   "about": {
     "title": "About Me",
     "heading": "Understanding systems, building better experiences",
-    "content1": "I focus on analyzing how game systems shape player behavior, pacing, and long-term engagement. Through case studies, system breakdowns, and technical projects, I explore the intersection of game design logic and practical implementation.",
-    "content2": "My work spans gameplay analysis, system design thinking, and hands-on development. I care about how ideas are translated into rules, interfaces, and user-facing experiences that people can actually feel.",
-    "content3": "This website is a collection of my work in game systems, design thinking, and technical experimentation. It is where I organize ongoing research, notes, and selected projects.",
+    "content1": "I work on two tracks at once: applying large language models to real engineering problems — agents, retrieval-augmented generation, and multi-agent systems — while breaking down game systems to understand how rules shape player behavior and experience.",
+    "content2": "During my internship I built a multimodal RAG knowledge base and a ReAct orchestration kernel for a corporate intranet, and in my spare time I ship playable game demos with Godot. I care about turning ideas into things that actually run and can be experienced.",
+    "content3": "This site collects my AI engineering practice and game systems research — a place for ongoing writing, notes, and project iterations.",
     "skills": {
-      "systemDesign": "System Design",
-      "gameplayAnalysis": "Gameplay Analysis",
+      "llmAgent": "LLM / Agent Engineering",
+      "rag": "RAG & Retrieval Systems",
       "pythonDataTools": "Python & Data Tools",
-      "technicalImplementation": "Technical Implementation"
+      "systemDesign": "Game System Design",
+      "gameplayAnalysis": "Gameplay Analysis"
     },
     "stats": {
-      "caseStudies": {
-        "value": "3+",
-        "label": "Case Studies"
+      "articles": {
+        "value": "2",
+        "label": "Articles"
       },
-      "demo": {
-        "value": "2+",
-        "label": "Demo Projects"
+      "internships": {
+        "value": "3",
+        "label": "Internships"
+      },
+      "playableDemo": {
+        "value": "1",
+        "label": "Playable Demo"
       },
       "graduation": {
         "value": "2027.12",
         "label": "Expected Graduation"
-      },
-      "skillsDevelopment": {
-        "value": "Ongoing",
-        "label": "Skills Development"
       }
     }
   },
@@ -68,57 +69,61 @@
         "category": "Breakdown"
       },
       "post2": {
-        "title": "文章1",
-        "excerpt": "文章1的摘要",
-        "date": "文章1发布日期",
-        "readTime": "文章1阅读时间",
-        "category": "文章1"
-      },
-      "post3": {
-        "title": "我的开源之路",
-        "excerpt": "文章3的摘要",
-        "date": "文章3发布日期",
-        "readTime": "文章3阅读时间",
-        "category": "文章3"
-      },
-      "post4": {
-        "title": "文章4",
-        "excerpt": "文章4的摘要",
-        "date": "文章4发布日期",
-        "readTime": "文章4阅读时间",
-        "category": "文章4"
-      },
-      "post5": {
-        "title": "文章5",
-        "excerpt": "文章5的摘要",
-        "date": "文章5发布日期",
-        "readTime": "文章5阅读时间",
-        "category": "文章5"
-      },
-      "post6": {
-        "title": "文章6",
-        "excerpt": "文章6的摘要",
-        "date": "文章6发布日期",
-        "readTime": "文章6阅读时间",
-        "category": "文章6"
+        "title": "Heroes of the Storm Multi-Map Competitive Analysis",
+        "excerpt": "An in-depth look at the multi-map design philosophy in Heroes of the Storm, compared with League of Legends and Honor of Kings.",
+        "date": "Mar 15, 2026",
+        "readTime": "10 min read",
+        "category": "Competitive Analysis"
       }
     }
   },
   "projects": {
-    "title": "Selected Work",
-    "heading": "Verifiable design and implementation",
-    "subtitle": "Focused work around game systems, gameplay prototypes, and technical implementation.",
+    "title": "AI Engineering × Game Design",
+    "heading": "Selected Projects",
+    "subtitle": "From agents and RAG systems to playable game demos — projects I actually built.",
     "code": "Code",
-    "demo": "Live Demo",
+    "demo": "Play Demo",
+    "detail": "Details",
+    "back": "Back to Projects",
+    "groupAI": "AI / Agent Projects",
+    "groupGame": "Game Projects",
     "items": {
+      "platform": {
+        "name": "Unified Enterprise Agent Platform",
+        "description": "An enterprise multi-agent platform combining my own components with three core capabilities from my internship — multimodal RAG, a ReAct orchestration kernel, and an EMC comparison tool.",
+        "role": "Internship · LLM Application Development",
+        "highlights": [
+          "FastAPI gateway + Next.js frontend with SSE streaming; LangGraph Supervisor orchestrates four specialist agents.",
+          "Multimodal RAG: BGE-M3 dense + BM25 sparse hybrid retrieval, RRF fusion, and reranker re-ranking with cross-modal image retrieval.",
+          "ReAct orchestration kernel with plugin-based tools and short/long-term memory; Ragas six-metric evaluation and Langfuse tracing."
+        ]
+      },
+      "itAgent": {
+        "name": "IT Support AI Agent",
+        "description": "An agent for internal IT support in SMEs: RAG-based knowledge Q&A, LangGraph ticket workflows, automatic Jira ticket creation, and human escalation.",
+        "role": "Personal project · Full-stack implementation",
+        "highlights": [
+          "Intent routing and multi-turn slot filling that auto-generates structured tickets and creates them via the Jira API.",
+          "Automatic escalation to humans when retrieval confidence is low or security-sensitive topics arise."
+        ]
+      },
       "airstrike": {
         "name": "Airstrike",
-        "description": "A Godot-based 2D shooter prototype for testing core combat loops, enemy behavior, and player control feel.",
-        "role": "Solo project · Gameplay prototype and technical implementation",
+        "description": "A 2D rocket defense game built with Godot: 20 escalating waves, five power-ups, destructible terrain, and a built-in map editor.",
+        "role": "Personal project · Solo development",
         "highlights": [
-          "Implemented player movement, shooting, enemy spawning, and collision feedback.",
-          "Used a compact prototype to test shooting rhythm, pressure, and level readability.",
-          "Kept the source open so reviewers can inspect implementation quality and iteration potential."
+          "20 waves of escalating difficulty with four enemy types and a CSV-driven wave config.",
+          "Five power-ups, destructible terrain, and a built-in map editor for custom levels."
+        ]
+      },
+      "chronoFront": {
+        "name": "Chrono Front",
+        "description": "A card-based roguelite MVP for a game design portfolio: six heroes, 24 character cards, 12 class talents, and a three-phase boss fight. Playable right in the browser.",
+        "role": "Personal project · Systems design and implementation",
+        "highlights": [
+          "Deterministic combat rules decoupled from presentation, headless-testable; cards, heroes, and encounters fully JSON-driven.",
+          "Turn-based three-slot decisions — Engage / Clash / Finish — with public enemy intent for readable risk assessment.",
+          "Exported to the web with Godot and playable right on this site."
         ]
       }
     }
@@ -162,5 +167,8 @@
     },
     "copyright": "© {{year}} Yixuan Tao. All rights reserved.",
     "madeWith": "Made with <1></1> using React"
+  },
+  "projectPage": {
+    "notFound": "Project not found"
   }
 }
